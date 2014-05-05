@@ -1,0 +1,11 @@
+{
+  "name": "NMS_Bower",
+  "version": "1.0.0",
+  "main": "",
+  "dependencies": {
+  	"bootstrap" : "latest",
+    "jquery": "latest",
+    "angular":"latest",
+    "angular-resource":"latest"
+  }
+}
