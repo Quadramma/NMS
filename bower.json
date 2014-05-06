@@ -6,6 +6,8 @@
   	"bootstrap" : "latest",
     "jquery": "latest",
     "angular":"latest",
-    "angular-resource":"latest"
+    "angular-resource":"latest",
+    "underscore" : "latest",
+    "angular-bootstrap": "latest"
   }
 }

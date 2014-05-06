@@ -1,3 +1,4 @@
+//supervisor -e 'html|js' node server.js
 var express = require('express')
     , http = require('http')
     , path = require('path')
@@ -18,7 +19,7 @@ var temaModel = db.model('Tema', temaSchema);
 var app = express();
 
 app.configure(function () {
-    app.set('port', process.env.PORT || 3000);
+    app.set('port', process.env.PORT || 1336);
     app.set('view engine', 'html');
     app.use(express.favicon());
     app.use(express.logger('dev'));

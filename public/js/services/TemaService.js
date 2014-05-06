@@ -1,6 +1,6 @@
 var module1 = angular.module('TemaService', ['ngResource'])
 .factory('Tema', ['$resource', function ($resource) {
-    return $resource('http://localhost:3000/api/tema/:id'
+    return $resource('http://localhost:1336/api/tema/:id'
     	, {}
     	, {
         update: { method: 'PUT'},

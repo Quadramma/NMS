@@ -1,62 +1,91 @@
 <!DOCTYPE html>
 <html ng-app="NMSApp">
+
 <head>
     <title>NMS_TITLE</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css"/>
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--DESCRIPTION && ICON -->
+    <meta name="description" content="Clarity S.A., Software integral">
+    <meta name="keywords" content="software, gestion, sistema para clinicas, sistema de gestion, ERP, HIS, HCE, CRM, Control de fichadas, email marketing, ClarityHealth, ClarityFlow, Clarity, sistema para hospitales, sistema para sanatorios">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    
+
+    <!--LIBS -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="lib/foundation.min.js"></script>
+    
+
+
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-resource/angular-resource.min.js"></script>
-    <script src="http://underscorejs.org/underscore-min.js"></script>
-    
+
+    <!--NMS LIBS -->
     <script src="js/config/app.js"></script>
     <script src="js/services/TemaService.js"></script>
     <script src="js/controllers/TemaController.js"></script>
 
-</head>
-<body ng-controller="TemaController">
-<!--Todo List Page-->
-<div id="todo-list" data-role="page">
-    <div data-role="header">
-        <h1>NMS Tema Node</h1>
-        <a href="#todo-detail" ng-click="new()" data-icon="add" class="ui-btn-right">Nuevo</a>
-    </div>
-    <div data-role="content">
-        <ul data-role="listview" data-filter="true">
-            <li ng-repeat="item in list">
-                <a href="#todo-list" data-transition="slide" ng-click="select(item._id)" value="{{item._id}}">{{item.description}}</a>
-            </li>
-        </ul>
-    </div>
-    <div data-role="footer" data-position="fixed">
-        <p>{{todos.length}} Tasks Remaining</p>
-    </div>
-</div>
-<!--Todo Detail Page-->
-<div id="todo-detail" data-role="page">
-    <div data-role="header">
-        <a href="#" data-icon="back" data-rel="back">Back</a>
+    <!--CLARITY MODEL-->
 
-        <h1>{{todo.description}}</h1>
-        <a href="#todo-list" ng-click="save()" data-icon="check" class="ui-btn-right">Save</a>
+    <!--CLARITY CUSTOM STYLES-->
+    <link rel="stylesheet" href="css/nms-navigation.css" />
+
+</head>
+
+<body ng-controller="TemaController">
+
+
+
+
+        <div data-role="header">
+            <h1>NMS Tema Node</h1>
+            <a href="#todo-detail" ng-click="new()" data-icon="add" class="ui-btn-right">Nuevo</a>
+        </div>
+        <div data-role="content">
+
+            <ul data-role="listview" data-filter="true">
+                <li ng-repeat="item in list">
+                    <a href="#todo-list" data-transition="slide" ng-click="select(item._id)" value="{{item._id}}">{{item.description}}</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <p>{{todos.length}} Tasks Remaining</p>
+        </div>
     </div>
-    <div data-role="content">
-        <ul data-role="listview" data-inset="true">
-            <li data-role="fieldcontain">
-                <label for="description">Description</label>
-                <input id="description" type="text" ng-model="item.description"/>
-            </li>
-        </ul>
-        <button data-inline="true" onclick="$.mobile.changePage('#todo-list')" ng-click="complete(todo._id)">
-            Complete Tema
-        </button>
+    <!--Todo Detail Page-->
+    <div id="todo-detail" data-role="page">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back">Back</a>
+
+            <h1>{{todo.description}}</h1>
+            <a href="#todo-list" ng-click="save()" data-icon="check" class="ui-btn-right">Save</a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li data-role="fieldcontain">
+                    <label for="description">Description</label>
+                    <input id="description" type="text" ng-model="item.description" />
+                </li>
+            </ul>
+            <button data-inline="true" onclick="$.mobile.changePage('#todo-list')" ng-click="complete(todo._id)">
+                Complete Tema
+            </button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <p>Tema ID: {{item._id}}</p>
+        </div>
     </div>
-    <div data-role="footer" data-position="fixed">
-        <p>Tema ID: {{item._id}}</p>
-    </div>
-</div>
+
+
 </body>
+
 </html>
