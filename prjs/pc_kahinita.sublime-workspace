@@ -1,0 +1,857 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sy",
+				"syncList"
+			],
+			[
+				"templ",
+				"templateUrl"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"WorkIt",
+				"WorkItemService"
+			],
+			[
+				"app",
+				"appsingleton"
+			],
+			[
+				"http",
+				"httpProvider"
+			],
+			[
+				"view",
+				"viewContainer"
+			],
+			[
+				"node",
+				"nodeViewContainer"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"grou",
+				"groupId"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"_gro",
+				"_group_id"
+			],
+			[
+				"group",
+				"_group_id"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"_a",
+				"_category_id"
+			],
+			[
+				"get",
+				"getItemsLocal"
+			],
+			[
+				"edi",
+				"editItem"
+			],
+			[
+				"new",
+				"newItem"
+			],
+			[
+				"curr",
+				"currentItem"
+			],
+			[
+				"clear",
+				"clearProductoFields"
+			],
+			[
+				"produ",
+				"productCollection"
+			],
+			[
+				"category",
+				"categoryCollection"
+			],
+			[
+				"sele",
+				"selectedLiID"
+			],
+			[
+				"body",
+				"bodyReady"
+			],
+			[
+				"appen",
+				"appendHeader"
+			],
+			[
+				"templa",
+				"templateHtml"
+			],
+			[
+				"select",
+				"selectedLiID"
+			],
+			[
+				"selec",
+				"selectedImgUrl"
+			],
+			[
+				"post",
+				"postUser"
+			],
+			[
+				"lo",
+				"logged"
+			],
+			[
+				"product",
+				"productImageWidth"
+			],
+			[
+				"toggl",
+				"toggled"
+			],
+			[
+				"togg",
+				"togglableItemFindTag"
+			],
+			[
+				"tog",
+				"togglableItem"
+			],
+			[
+				"toggle",
+				"toggleDisplay"
+			],
+			[
+				"_",
+				"_category_id"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"catego",
+				"categoryDescription"
+			],
+			[
+				"dumm",
+				"dummyWrapper"
+			],
+			[
+				"clone",
+				"cloneCont"
+			],
+			[
+				"dummy",
+				"dummyCont"
+			],
+			[
+				"last",
+				"_lastCategoryCreated"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"cur",
+				"currWidth"
+			],
+			[
+				"ini",
+				"initialWidth"
+			],
+			[
+				"check",
+				"checkAuth"
+			],
+			[
+				"log",
+				"loggedIn"
+			],
+			[
+				"auth",
+				"authSuperPass"
+			],
+			[
+				"glo",
+				"GLOBALS"
+			],
+			[
+				"authSU",
+				"authSuperUser"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/GoogleDrive/git/NMS/public/index.html",
+			"settings":
+			{
+				"buffer_size": 3296,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/GoogleDrive/git/NMS/public/css/nms.css",
+			"settings":
+			{
+				"buffer_size": 124,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/GoogleDrive/git/NMS/public/js/controllers/TemaController.js",
+			"settings":
+			{
+				"buffer_size": 4464,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "  <p>{{todos.length}} Tasks Remaining</p>\n        \n \n            <h1>{{todo.description}}</h1>\n            <a href=\"#todo-list\" ng-click=\"save()\" data-icon=\"check\" class=\"ui-btn-right\">Save</a>\n        </div>\n        <div data-role=\"content\">\n            <ul data-role=\"listview\" data-inset=\"true\">\n                <li data-role=\"fieldcontain\">\n                    <label for=\"description\">Description</label>\n                    <input id=\"description\" type=\"text\" ng-model=\"item.description\" />\n                </li>\n            </ul>\n            <button data-inline=\"true\" onclick=\"$.mobile.changePage('#todo-list')\" ng-click=\"complete(todo._id)\">\n                Complete Tema\n            </button>\n        </div>\n        <div data-role=\"footer\" data-position=\"fixed\">\n            <p>Tema ID: {{item._id}}</p>\n        </div>",
+			"settings":
+			{
+				"buffer_size": 828,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"htm",
+				"HTMLPrettify"
+			],
+			[
+				"HTML",
+				"HTMLPrettify"
+			],
+			[
+				"HTM",
+				"HTMLPrettify"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"set java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set",
+				"Set Syntax: HTML"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"ls",
+			"cmd",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/GoogleDrive/git/NMS/bower.json",
+		"/D/GoogleDrive/git/NMS/public/lib/semantic-state.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/config/app.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/index.html",
+		"/D/asd",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/supplierController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/supplier/supplierList.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/client/clientList.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/clientController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/supplier/supplierLayout.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/supplier/supplierEdit.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/supplier/supplierCreate.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/client/clientForm.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/routes/clientRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/services/supplierService.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/client/clientEdit.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/client/clientCreate.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/models/flatfiledb.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/config/appRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/client/clientCRUDController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/services/clientService.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/workItemsController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/server.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/client/clientLayout.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/clientsController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/company/companyList.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/company/companyFormController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/company/companyCreateController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/mainController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/clients.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/home.dogs.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/loginController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/forms/companyForm.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/homeController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/home.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/bower.json",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/background.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/routes/userRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/services/loginService.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/login.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/manifest.json",
+		"/D/GoogleDrive/sistemas/TidyNodes/background.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/models/appsingleton.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/appController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/services/workItemService.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/views/workitems.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/js/controllers/suppliersController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/routes/workItemRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/pages/home.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/config/app.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/models/appsingleton.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/controllers/homeController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/pages/suppliers.html",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/controllers/clientsController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/controllers/suppliersController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/controllers/mainController.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/pages/clients.html",
+		"/D/GoogleDrive/quadramma/ga/pagina/_admin/jlm/jlm.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/core.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/public/app.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/models/cliente.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/routes/clienteRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/routes/generalRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/app/routes/proveedorRoutes.js",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/.bowerrc",
+		"/D/GoogleDrive/git/BasicERP-OfflineApp-HTML5/README.md",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/README.md",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/public/index.html",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/public/core.js",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/iniciar_clientServer.bat",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/server.js",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/clientServer.js",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/iniciar_cliente.bat",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/iniciar.bat",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/Iniciar_Firefox.bat",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/db/todo.db",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/package.json",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/gitcommands.info",
+		"/D/GoogleDrive/git/SinglePageAppNodeAngular/node_modules/.gitignore",
+		"/D/GoogleDrive/git/Colpermin/README.md",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/profile_view.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/user_view.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/node.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/index.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/test.js",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/app.js",
+		"/D/GoogleDrive/sistemas/TidyNodes/index.html",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/index 2.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/node_view.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/grupo_view.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/nodes.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/user.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/profile.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/filters.js",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/directives.js",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/controllers.js",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/services.js",
+		"/D/GoogleDrive/sistemas/TidyNodes/lib/angular-route.min.js",
+		"/D/temp/angular-seed-master/app/index.html",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/tndb.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/group.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/api/tndb.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/tn_group.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/tn_user.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/tn_profile.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/api.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/db.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/api/routes/tn_user.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/api/routes/tn_group.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/.htaccess",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-3/tn_perfil.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/api/index.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/manifest.json",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/api 2.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/db 2.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/api/api.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/api/db.php",
+		"/D/GoogleDrive/sistemas/TidyNodes/css/jqm-demos.css",
+		"/D/GoogleDrive/sistemas/TidyNodes/js/jqm.js",
+		"/C/Users/Javier/Documents/HelloWorldSingleViewApp/index.html",
+		"/C/Users/Javier/Documents/SimpleCRUD_XDKProject/www/index.html",
+		"/C/Users/Javier/Documents/HelloWorldSingleViewApp/js/index_user_scripts.js",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/index.html",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/api.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/upload_file.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/db.php",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/categoryCRUD.php",
+		"/D/portable/xampp/htdocs/ga/js/_api/index.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"client",
+			"Client",
+			"client",
+			"Client",
+			"todos",
+			"app",
+			"proveedor",
+			"cliente",
+			"Cliente",
+			"back",
+			"init",
+			"QM_FS",
+			"QM_GA",
+			"QM_DB",
+			"create",
+			"init",
+			"createTablesIfNotExists",
+			"crea",
+			"createTablesIfNotExists",
+			"create",
+			"img",
+			"https://cservices.appmobi.com",
+			"\"uploads/\"",
+			"$path",
+			"\"file\"",
+			"echo \"LALA\";",
+			"change",
+			"Collection",
+			"saveProductHandler",
+			"bindAuthResult",
+			"bindButtonSalir",
+			"clearProductoFields",
+			"upload",
+			"addCategories",
+			".img",
+			"path ",
+			"JQMRE",
+			"JLM.Auth.login",
+			"manualAuthSuccess",
+			"f.",
+			"ajax",
+			"Product",
+			"keyName",
+			"var f",
+			"=",
+			"product",
+			"=",
+			"JLM.Auth.logged = true;",
+			"JLM.Auth.logged = true; ",
+			"autoAuth",
+			"appendBodyContent",
+			"autoAuth",
+			"authConfigured",
+			"auto",
+			"autoAuth",
+			"config",
+			"store",
+			"ajax",
+			"<?",
+			"btn-delete",
+			"frmLogin",
+			"login-btn",
+			"Upload",
+			"<?",
+			"txtDescription",
+			"cboCa",
+			"cboCategory",
+			"submit",
+			"external",
+			"OPERATION",
+			"init",
+			"appAdminRootPath",
+			"jsonCategories",
+			"appAdminRootPath",
+			"btn-modalImagesPopup-image",
+			"controlgroup",
+			"modalImagesPopup",
+			"appAdminRootPath",
+			"sortBy",
+			"sort",
+			"owlWrapper",
+			"collection",
+			"dummyWrapper",
+			">",
+			"<",
+			">",
+			"<",
+			">",
+			"owl-demo",
+			"client_img",
+			"catch",
+			"try",
+			"could not find driver",
+			"$name;",
+			"$hooks",
+			"redirect",
+			"headers",
+			"setStatus",
+			"redirect",
+			"response",
+			"redirect",
+			"obj",
+			"app",
+			"javasc",
+			"$appSiteRootPath",
+			"appAdminRootPath",
+			"appRootPath",
+			"google",
+			"rootPath",
+			"rewrite",
+			"acces",
+			"router",
+			"src=\"",
+			"adminRootPath",
+			"require"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"supplier",
+			"Supplier",
+			"supplier",
+			"Supplier",
+			"list",
+			"appRoutes",
+			"supplier",
+			"proveedor",
+			"Proveedor",
+			"TNFS",
+			"TNGA",
+			"TNDB",
+			"$path",
+			"$inputName",
+			"$path",
+			"newProductHandler",
+			"self.",
+			"this.",
+			"Category",
+			":",
+			"category",
+			":",
+			"togglableItem",
+			"api",
+			"SlimApp",
+			"$GLOBALS[\"appSiteRootPath\"]",
+			"$GLOBALS[\"appAdminRootPath\"]",
+			"$GLOBALS[\"appRootPath\"]",
+			"appSiteRootPath",
+			"appAdminRootPath",
+			"src=\"<?=$rootPath?>",
+			"rootPath"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/GoogleDrive/git/NMS/public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2506,
+								2486
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1100.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"file": "/D/GoogleDrive/git/NMS/public/img/logo_mini.png",
+					"semi_transient": false,
+					"stack_index": 3,
+					"type": "image"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/GoogleDrive/git/NMS/public/css/nms.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/GoogleDrive/git/NMS/public/js/controllers/TemaController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								921,
+								921
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "pc_kahinita.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 310.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

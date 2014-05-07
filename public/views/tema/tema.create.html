@@ -1,0 +1,16 @@
+
+<h1>Nuevo Tema</h1>
+
+<div class="ui segment">
+    <div class="ui fluid form">
+        <div class="fields">
+
+            <div class="field">
+                <label for="description">Descripcion</label>
+                <input id="description" type="text" ng-model="item.description" />
+            </div>
+        </div>
+
+        <div ui-sref="clarity.tema.list" ng-click="save()" class="ui secondary submit button">Guardar</div>
+    </div>
+</div>

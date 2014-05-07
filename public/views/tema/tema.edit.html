@@ -1,0 +1,22 @@
+<p>{{list.length}} Temas leidos</p>
+<h1>Edicion</h1>
+
+
+<div class="ui segment">
+    <div class="ui fluid form">
+        <div class="fields">
+
+            <div class="field">
+                <label for="description">Descripcion</label>
+                <input id="description" type="text" ng-model="item.description" />
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="ui segment">
+    <a ui-sref="clarity.tema.list" ng-click="save()" class="ui small blue button">Editar</a>
+    <a ui-sref="clarity.tema.list" ng-click="delete()" class="ui small blue button">Eliminar</a>
+    <a ui-sref="clarity.tema.list" class="ui small blue button">Cancelar</a>
+</div>

@@ -1,16 +1,43 @@
-NMSApp.controller("TemaController", [
-    "$scope", "Tema",
-    function($scope, Tema) {
+angular.module('TemaCtrl', []).controller('TemaController'
+
+    , function($scope, $rootScope, Tema) {
 
         $scope.list = Tema.query();
 
-        console.log($scope.list);
+        //ALL
+        $('.ui.sidebar')
+            .sidebar("setting", {
+                overlay: true,
+                exclusive: true,
+                //debug: true,
+                //verbose: true
+            });
+
+        //TOP
+        //$('.nms.top.ui.sidebar').sidebar('toggle');
+
+        //LEFT BIND BTN
+        $('.nms.left.ui.sidebar')
+            .sidebar('attach events', '.nms.btn-node-sidebar.toggle.button')
+            .sidebar("onChange", function() {
+                console.log("onChange");
+            });
+        $(".nms.page").on("click", function(evt) {
+            var btnIgnoreId = $('.nms.btn-node-sidebar.toggle.button').first().attr("id");
+            if (evt.target.id == btnIgnoreId) {} else {
+                $('.nms.left.ui.sidebar')
+                    .sidebar("hide");
+
+            }
+        });
+
+
 
         $scope.select = function(_id) {
             $scope.item = _.where($scope.list, {
                 _id: _id
             })[0];
-            $scope.delete();
+            //$scope.delete();
         }
 
         $scope.new = function() {
@@ -24,7 +51,7 @@ NMSApp.controller("TemaController", [
                 });
             } else {
                 Tema.update({
-                    temaId: $scope.item._id
+                    id: $scope.item._id
                 }, $scope.item, function(data) {});
             }
         }
@@ -49,56 +76,8 @@ NMSApp.controller("TemaController", [
             } else {}
         }
 
-        $scope.complete = function(id) {
-            Tema.delete({
-                id: id
-            }, function() {
-                $scope.list = _.without($scope.list, $scope.item);
-            });
-        }
-
-        $scope.data = [{
-            "id": 1,
-            "title": "1. dragon-breath",
-            "items": []
-        }, {
-            "id": 2,
-            "title": "2. moiré-vision",
-            "items": [{
-                "id": 21,
-                "title": "2.1. tofu-animation",
-                "items": [{
-                    "id": 211,
-                    "title": "2.1.1. spooky-giraffe",
-                    "items": [{
-                        "id": 2111,
-                        "title": "2.1.1.1 spooky-giraffe",
-                        "items": []
-                    }, {
-                        "id": 2112,
-                        "title": "2.1.1.2 bubble-burst",
-                        "items": []
-                    }]
-                }, {
-                    "id": 212,
-                    "title": "2.1.2. bubble-burst",
-                    "items": []
-                }]
-            }, {
-                "id": 22,
-                "title": "2.2. barehand-atomsplitting",
-                "items": []
-            }]
-        }, {
-            "id": 3,
-            "title": "3. unicorn-zapper",
-            "items": []
-        }, {
-            "id": 4,
-            "title": "4. romantic-transclusion",
-            "items": []
-        }];
 
 
-    }
-]);
+
+
+    });
