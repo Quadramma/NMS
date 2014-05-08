@@ -1,8 +1,13 @@
 angular.module('TemaCtrl', []).controller('TemaController'
 
     , function($scope, $rootScope, Tema) {
+        
+        $scope.list = Tema.query(); //.net rta
 
-        $scope.list = Tema.query();
+
+//console.log($scope.list);
+
+
 
         //ALL
         $('.ui.sidebar')
@@ -45,33 +50,33 @@ angular.module('TemaCtrl', []).controller('TemaController'
         }
 
         $scope.save = function() {
-            if ($scope.item._id == null) {
+            if ($scope.item.TemaID == null) {
                 Tema.save({}, $scope.item, function(data) {
                     $scope.list.push(data);
                 });
             } else {
                 Tema.update({
-                    id: $scope.item._id
+                    id: $scope.item.TemaID
                 }, $scope.item, function(data) {});
             }
         }
 
         $scope.delete = function() {
-            if ($scope.item._id != null) {
+            if ($scope.item.TemaID != null) {
                 console.log($scope.item);
                 Tema.delete({
-                    id: $scope.item._id
+                    id: $scope.item.TemaID
                 }, $scope.item, function(list) {
 
 
                     //setTimeout(function () {
                     //  $scope.$apply(function () {
-                    $scope.list = list
+                    //$scope.list = list
                     // });
                     // }, 1000);
 
                 }, function() {
-                    console.log("Delete FAIL " + $scope.item._id);
+                    console.log("Delete FAIL " + $scope.item.TemaID);
                 });
             } else {}
         }

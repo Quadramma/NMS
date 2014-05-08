@@ -1,77 +1,71 @@
 <!DOCTYPE html>
-<html ng-app="NMSApp">
+<html ng-app="NMSApp" ng-controller="NMSAppController">
 
 <head>
-    <title>NMS_TITLE</title>
+    <title>NMS</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--DESCRIPTION && ICON -->
+    <!--NMS.DESCRIPTION && ICON -->
     <meta name="description" content="Clarity S.A., Software integral">
     <meta name="keywords" content="software, gestion, sistema para clinicas, sistema de gestion, ERP, HIS, HCE, CRM, Control de fichadas, email marketing, ClarityHealth, ClarityFlow, Clarity, sistema para hospitales, sistema para sanatorios">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
-    <!-- STYLES -->
+    <!--CSS.SEMANTIC -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/semantic.min.css" />
 
-
-    <!--LIBS -->
+    
+    <!--JS.ESSENTIAL-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://underscorejs.org/underscore-min.js"></script>
     <script src="lib/semantic.min.js"></script>
     <script src="lib/semantic-state.js"></script>
-
-
-
-    <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-resource/angular-resource.min.js"></script>
-    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="lib/angular-resource.min.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
     <!-- -->
+
+    <!--ANGULAR.APP-->
     <script src="js/config/app.js"></script>
-    <script src="js/config/appRoutes.js"></script>
-    <script src="js/services/TemaService.js"></script>
-    <script src="js/controllers/TemaController.js"></script>
-    <script src="js/controllers/HomeController.js"></script>
+    <script src="js/routes/appRoutes.js"></script>
 
-    <!--NMS LIBS -->
-
-
-    <!--CLARITY MODEL-->
-
-    <!--CLARITY CUSTOM STYLES-->
+    <!-- --NMS--                                                            --NMS-- -->
+    <!--NMS.CSS-->
     <link rel="stylesheet" href="css/nms.css" />
     <link rel="stylesheet" href="css/nms-navigation.css" />
+    <!--NMS.ANGULAR.CONTROLLERS-->
+    <script src="js/controllers/NMSAppController.js"></script>
+    <!--NMS.MODEL-->
 
+    <!-- --CLARITY--                                                            --CLARITY-- -->
+    <!--ANGULAR.ROUTES.CLARITY-->
+    <script src="js/routes/clarity/appRoutes.clarity.js"></script>
+    <script src="js/routes/clarity/appRoutes.crm.js"></script>
+    <script src="js/routes/clarity/appRoutes.tema.js"></script>
+    <!--ANGULAR.SERVICES.CLARITY-->
+    <script src="js/services/clarity/TemaService.js"></script>
+    <!--ANGULAR.CONTROLLERS.CLARITY-->
+    <script src="js/controllers/clarity/TemaController.js"></script>
+    <script src="js/controllers/clarity/HomeController.js"></script>
+    <script src="js/controllers/clarity/CrmController.js"></script>
+    <!--ANGULAR.MODEL.CLARITY-->
+    <!--CLARITY.CSS-->
+    <!-- --BERP--                                                            --BERP-- -->
+    <!--BERP.ANGULAR.ROUTES-->
+    <script src="js/routes/berp/appRoutes.berp.js"></script>
+    <script src="js/routes/berp/appRoutes.client.js"></script>
+    <script src="js/routes/berp/appRoutes.supplier.js"></script>
+    <!--BERP.CSS-->
+    <!--BERP.JS-->
 </head>
 
 <body>
-
-    <div class="nms left ui vertical sidebar secondary menu">
-
-        <a class="active item">
-            <i class="home icon"></i> Inicio
-        </a>
-        <a class="item">
-            <i class="mail icon"></i> ABM Tema
-        </a>
-
-        <div class="ui fluid segment menu">
-            <div id="nms-btn-node-sidebar" class="nms btn-node-sidebar ui blue icon toggle button">
-                <i class="reorder icon"></i>
-            </div>
-        </div>
-
-    </div>
-
-
     <div class="nms page">
         <div ui-view></div>
     </div>
-
 </body>
 
 </html>

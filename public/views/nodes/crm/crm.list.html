@@ -1,0 +1,19 @@
+
+<h1>ABM CRM</h1>
+
+<a class="ui small blue button" ui-sref="clarity.crm.create" ng-click="new()">Nuevo</a>
+
+
+<div class="ui celled list">
+ 
+  <div ng-repeat="item in list" class="item" >
+    <div class="content">
+      <div class="header">{{item.Descripcion}}</div>
+      {{item.TemaID}}
+      <a ng-click="select(item._id)" ui-sref="clarity.tema.edit"><i class="edit icon link icon"></i></a>
+    </div>
+  </div>
+ 
+</div>
+
+<p>{{list.length}} Temas leidos</p>

@@ -1,24 +1,38 @@
 var NMSApp = angular.module("NMSApp", [
-    "TemaService",
-    "HomeCtrl",
-    "TemaCtrl",
-    "appRoutes"
+  //COMMON
+  "appRoutes",
+  //CLARITY
+  "TemaService",
+  "HomeCtrl",
+  "TemaCtrl",
+  "CrmCtrl"
 ]);
 
 NMSApp.config(['$httpProvider', '$sceDelegateProvider',
-    function($httpProvider, $sceDelegateProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        $sceDelegateProvider.resourceUrlWhitelist(['self', /^https?:\/\/(cdn\.)?yourdomain.com/]);
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    }
+  function($httpProvider, $sceDelegateProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    $sceDelegateProvider.resourceUrlWhitelist(['self', /^https?:\/\/(cdn\.)?yourdomain.com/]);
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  }
 ]);
 
-/*
-NMSApp.config(['$httpProvider', function ($httpProvider) {
-  //Reset headers to avoid OPTIONS request (aka preflight)
-  $httpProvider.defaults.headers.common = {};
-  $httpProvider.defaults.headers.post = {};
-  $httpProvider.defaults.headers.put = {};
-  $httpProvider.defaults.headers.patch = {};
+NMSApp.config(function ($httpProvider) {
+  $httpProvider.defaults.transformRequest = function(data) {
+    if (data === undefined)
+      return data;
+
+  console.log(data);
+   return data;
+  }
+  $httpProvider.defaults.headers.post['Content-Type'] = undefined;
+});
+
+
+var AppConfigService = angular.module('AppConfigService', [])
+.factory('AppConfig', [function () {
+    return {
+      apiClarityPathVS : "http://localhost:9000/api/",
+      apiLocalhost1336 : "http://localhost:1336/api/",
+      apiLocalhostIIS  : "http://localhost/WebApi/api/"
+    }
 }]);
-*/
