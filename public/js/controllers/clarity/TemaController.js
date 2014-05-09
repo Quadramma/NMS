@@ -1,12 +1,54 @@
-angular.module('TemaCtrl', []).controller('TemaController'
+angular.module('TemaCtrl', []).controller('TemaController', function(
+    $scope, $rootScope, Tema, RCM) {
+    RCM.mixin({ //INJECT METHODS: CREATE, SELECT, QUERY, DELETE
+        $ctrlScope: $scope, //$scope
+        $res: Tema, //$resource
+        idField: "TemaID", //campo id del item
+        itemFieldName: "item", // propeidad del $scope que contiene el item seleccionado
+        itemsFieldName: "items", //propiedad de $scope que contiene la lista de items
+        resourceApiIdFieldName: "id", //nombre del campo id del routeo del api(web api, wcf, nodejs, etc)
+        createDefaults: { //campos defaults para cuando se crea un item nuevo
+            EsFijo: 1,
+            GrupoID: 1
+        },
+        onDeleteSuccess: function(data) {
+            $scope.items = data.items;
+            console.log("TemaCtrl onDeleteSuccess");
+        },
+        onDeleteError: function() {
+            console.log("TemaCtrl Delete Error");
+        },
+        debug: true, //RCM modo verbose, imprime lo que va pasando
+        callQueryAfterMixin: true //llama automaticamente a query y recupera lista de items
+    });
 
-    , function($scope, $rootScope, Tema) {
-        
-        $scope.list = Tema.query(); //.net rta
+    //SAVE OR UPDATE
+    $scope.save = function() {
+        if ($scope.item.TemaID == null) {
+            console.log("TemaCtrl Save");
+            Tema.save({}, {
+                Descripcion: $scope.item.Descripcion,
+                EsFijo: 1,
+                GrupoID: 1
+            }, function(data) {
+                $scope.items = data.items;
+            });
+        } else {
+            console.log("TemaCtrl Update");
+            Tema.update({
+                id: $scope.item.TemaID
+            }, $scope.item, function(data) {
+                $scope.items = data.items;
+            });
+        }
+    }
 
 
-//console.log($scope.list);
+});
 
+
+
+/*
 
 
         //ALL
@@ -18,10 +60,8 @@ angular.module('TemaCtrl', []).controller('TemaController'
                 //verbose: true
             });
 
-        //TOP
-        //$('.nms.top.ui.sidebar').sidebar('toggle');
 
-        //LEFT BIND BTN
+//LEFT BIND BTN
         $('.nms.left.ui.sidebar')
             .sidebar('attach events', '.nms.btn-node-sidebar.toggle.button')
             .sidebar("onChange", function() {
@@ -36,53 +76,4 @@ angular.module('TemaCtrl', []).controller('TemaController'
             }
         });
 
-
-
-        $scope.select = function(_id) {
-            $scope.item = _.where($scope.list, {
-                _id: _id
-            })[0];
-            //$scope.delete();
-        }
-
-        $scope.new = function() {
-            $scope.item = new Tema();
-        }
-
-        $scope.save = function() {
-            if ($scope.item.TemaID == null) {
-                Tema.save({}, $scope.item, function(data) {
-                    $scope.list.push(data);
-                });
-            } else {
-                Tema.update({
-                    id: $scope.item.TemaID
-                }, $scope.item, function(data) {});
-            }
-        }
-
-        $scope.delete = function() {
-            if ($scope.item.TemaID != null) {
-                console.log($scope.item);
-                Tema.delete({
-                    id: $scope.item.TemaID
-                }, $scope.item, function(list) {
-
-
-                    //setTimeout(function () {
-                    //  $scope.$apply(function () {
-                    //$scope.list = list
-                    // });
-                    // }, 1000);
-
-                }, function() {
-                    console.log("Delete FAIL " + $scope.item.TemaID);
-                });
-            } else {}
-        }
-
-
-
-
-
-    });
+*/
