@@ -1,8 +1,8 @@
 <div class="ui secondary pointing menu">
-    <a href="/" class="ui small image">
+    <a ui-sref="ga.home" class="ui small image">
         <img src="img/ga/logo.jpg">
     </a>
-    <a class="active item">
+    <a ui-sref="ga.home" class="item">
         <i class="home icon"></i> Inicio
     </a>
     <a ui-sref="ga.product.items" class="item">
@@ -11,16 +11,21 @@
     <a ui-sref="ga.project.items" class="item">
         <i class="suitcase icon"></i> Proyectos
     </a>
-    <a ui-sref="config.slider" class="item">
+
+    <a ui-sref="ga.categories" class="item">
+        <i class="wrench icon"></i> Categorias
+    </a>
+
+    <a ui-sref="ga.config.slider" class="item">
         <i class="wrench icon"></i> Configurar Slider
     </a>
-    <a ui-sref="config.destacados" class="item">
+    <a ui-sref="ga.config.destacados" class="item">
         <i class="wrench icon"></i> Configurar Destacados
     </a>
 
-    <div class="right menu">
-        <a class="ui item">
-          garoot - Salir
+    <div class="right menu" ng-show="logged()">
+        <a ui-sref="ga.login" ng-click="clearLogin();" class="ui item">
+          Salir
         </a>
     </div>
 </div>

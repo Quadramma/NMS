@@ -1,11 +1,12 @@
 
-<a ng-click="create()" ui-sref="ga.product.create" class="ui black labeled icon button"><i class="add icon"></i> Añadir Producto</a>
-<a ui-sref="ga.category.items" class="ui labeled icon button"><i class="tags icon"></i> Categorias</a>
+<a ng-click="create()" ui-sref="ga.product.create" class="ui black labeled icon small button"><i class="add icon"></i> Añadir Producto</a>
+<a ui-sref="ga.category.items" class="ui labeled icon small button"><i class="tags icon"></i> Categorias</a>
 
-<table class="ui table segment">
+<table class="ui sortable compact table segment">
     <thead>
         <tr>
             <th></th>
+            <th>Categoria</th>
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Detalle1</th>
@@ -15,7 +16,8 @@
     </thead>
     <tbody>
         <tr ng-repeat="item in items" ui-sref="ga.product.edit(item._id)" ng-click="select(item);">
-            <td><img class="rounded small ui image" src="{{uploadsPath}}/{{item.url}}"/></td>
+            <td><img class="rounded mini ui image" src="{{fullpicturePath}}/{{item.url}}"/></td>
+            <td>{{item.categoryDescription}}</td>
             <td>{{item.code}}</td>
             <td>{{item.name}}</td>
             <td>{{item.details1}}</td>

@@ -1,21 +1,48 @@
-var $currentCatScope = null;
+CategoryDefinitions = {
+    BindFormValidations: function() {
+        console.log("BindFormValidations: this is empty, are you sure ?");
+    }
+}
 
-angular.module('CategoryCtrl', []).controller('CategoryController', function(
-    $scope, $rootScope, $location, Category, RCM) {
+var $currentCatScope = null;
+var _moduleName = "CategoryCtrl";
+var _controllerName = "CategoryController";
+var _modelTableIdFieldName = "_id";
+var _scopeItemFieldName = "item";
+var _scopeItemsFieldName = "items";
+var _resourceApiIdFieldName = "id";
+//delete,update,save returns -> {ok,dbResult}
+//query, get retuns [] of items
+
+angular.module(_moduleName, []).controller(_controllerName, function(
+    $scope, $rootScope, $location, Category, RCM, $state) {
     $currentCatScope = $scope;
+
+    //defaults
+    $scope.stateRedirectAfterSaveRoute = "ga.category.items";
+    $scope.stateRedirectAfterDeleteRoute = "ga.category.items";
+    $scope.defaultFields = {
+        _category_type_id: 1
+    }
+
     RCM.mixin({ //INJECT METHODS: CREATE, SELECT, QUERY, DELETE
         $ctrlScope: $scope, //$scope
         $res: Category, //$resource
-        idField: "_id", //campo id del item
-        itemFieldName: "item", // propeidad del $scope que contiene el item seleccionado
-        itemsFieldName: "items", //propiedad de $scope que contiene la lista de items
-        resourceApiIdFieldName: "id", //nombre del campo id del routeo del api(web api, wcf, nodejs, etc)
-        createDefaults: { //campos defaults para cuando se crea un item nuevo
+        idField: _modelTableIdFieldName, //campo id del item
+        itemFieldName: _scopeItemFieldName, // propeidad del $scope que contiene el item seleccionado
+        itemsFieldName: _scopeItemsFieldName, //propiedad de $scope que contiene la lista de items
+        resourceApiIdFieldName: _resourceApiIdFieldName, //nombre del campo id del routeo del api(web api, wcf, nodejs, etc)
+        createDefaults: $scope.defaultFields,
+        onQuerySuccess: function(data) {
+            $scope.productCategories = _.filter(data, function(item) {
+                return item._category_type_id == "1"; //Products
+            });
+            $scope.projectCategories = _.filter(data, function(item) {
+                return item._category_type_id == "2"; //Projects
+            });
         },
         onDeleteSuccess: function(data) {
-            $scope.items = data.items;
-            $scope.changeState("/ga/category/items", 200);
-            //console.log("CategoryCtrl onDeleteSuccess");
+            $state.go($scope.stateRedirectAfterDeleteRoute);
         },
         onDeleteError: function() {
             console.log("CategoryCtrl onDeleteError");
@@ -24,21 +51,24 @@ angular.module('CategoryCtrl', []).controller('CategoryController', function(
         //callQueryAfterMixin: true //llama automaticamente a query y recupera lista de items
     });
 
+    $scope.precreate = function(defaultFields) {
+        RCM.setDefaultFields(defaultFields || $scope.defaultFields);
+        $scope.create();
+    };
+
     //SAVE OR UPDATE
     $scope.save = function() {
         if ($scope.item._id == null) {
             console.log("CategoryCtrl Save");
             Category.save({}, $scope.item, function(data) {
-                $scope.items = data.items;
-                $scope.changeState("/ga/category/items", 200);
+                $state.go($scope.stateRedirectAfterSaveRoute);
             });
         } else {
             console.log("CategoryCtrl Update");
             Category.update({
                 id: $scope.item._id
             }, $scope.item, function(data) {
-                $scope.items = data.items;
-                $scope.changeState("/ga/category/items", 200);
+                $state.go($scope.stateRedirectAfterSaveRoute);
             });
         }
     }
@@ -50,7 +80,11 @@ angular.module('CategoryCtrl', []).controller('CategoryController', function(
             });
         }, time);
     }
-    $scope.trysave = function() {
+    $scope.validateAndSave = function(settings) {
+        if (!_.isUndefined(settings)) {
+            $scope.stateRedirectAfterSaveRoute =
+                settings["stateRedirectAfterSaveRoute"] || "ga.category.items";
+        }
         $('.ui.form').form('validate form');
     }
     $scope.trydelete = function() {
@@ -67,44 +101,62 @@ angular.module('CategoryCtrl', []).controller('CategoryController', function(
             })
             .modal('show');
     }
-});
 
-function CategoryBindFormValidations() {
-    var $catScope = $currentCatScope;
-    $('.ui.form')
-        .form({
-            description: {
-                identifier: 'description',
-                rules: [{
-                    type: 'empty',
-                    prompt: 'Por favor complete la descripción'
-                }]
-            }
-        }, {
-            onSuccess: function() {
-                $catScope.save();
-            },
-            onFailure: function() {
-                //console.log("fail");
-            }
-        });
-}
+    CategoryDefinitions.BindFormValidations = function(onSuccess, onFailure) {
+        var $catScope = $currentCatScope;
+        $('.ui.form')
+            .form({
+                description: {
+                    identifier: 'description',
+                    rules: [{
+                        type: 'empty',
+                        prompt: 'Descripción requerida'
+                    }]
+                }
+            }, {
+                onSuccess: onSuccess,
+                onFailure: onFailure
+            });
+    }
+});
 
 
 function CategoryItemsController() {
     $currentCatScope.query();
-    setInterval(function() {
-        // $currentCatScope.query();
-    }, 5000);
+    $('table').tablesort();
 }
 
 function CategoryCreateController() {
-    CategoryBindFormValidations();
-    $currentCatScope.create();
-
-
+    CategoryDefinitions.BindFormValidations(function() {
+        $currentCatScope.save();
+    });
+    $currentCatScope.precreate({
+        _category_type_id: 1
+    });
 }
 
 function CategoryEditController() {
-    CategoryBindFormValidations();
+    $currentCatScope.stateRedirectAfterSaveRoute = "ga.category.items";
+    CategoryDefinitions.BindFormValidations(function() {
+        $currentCatScope.save();
+    });
+}
+
+function PrjCategoryCreateController() {
+    $currentCatScope.stateRedirectAfterSaveRoute = "ga.prjcategory.items";
+    $currentCatScope.stateRedirectAfterDeleteRoute = "ga.prjcategory.items";
+    CategoryDefinitions.BindFormValidations(function() {
+        $currentCatScope.save();
+    });
+    $currentCatScope.precreate({
+        _category_type_id: 2
+    });
+}
+
+function PrjCategoryEditController() {
+    $currentCatScope.stateRedirectAfterSaveRoute = "ga.prjcategory.items";
+    $currentCatScope.stateRedirectAfterDeleteRoute = "ga.prjcategory.items";
+    CategoryDefinitions.BindFormValidations(function() {
+        $currentCatScope.save();
+    });
 }

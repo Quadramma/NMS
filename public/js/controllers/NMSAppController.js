@@ -9,28 +9,68 @@ function GAppController($scope, $rootScope) {
 
     $("title").html("GA | Backend");
 
+    $scope.logged = function() {
+        return $rootScope.logged;
+    }
+    $scope.clearLogin = function() {
+
+        setTimeout(function() {
+            $scope.$apply(function() {
+                $rootScope.logged = false;
+            });
+        }, 1000);
+        console.log("clearlogin!");
+        store.set("gausername", "");
+        store.set("gapassword", "");
+    }
+
 }
 
-function GaLoginController($scope, $rootScope) {
 
-    var Login = angular.module('GaLoginService', ['ngResource'])
-        .factory('Login', ['$resource', "AppConfig",
 
-            function($resource, AppConfig) {
-                return $resource(AppConfig.apiPathQuadramma + '/login/:id', {}, {
-                    check: {
-                        method: 'POST',
-                        isArray: false
-                    }
-                });
+//GA LOGIN///////////////////////////
+var GaLogin = angular.module('GaLoginService', ['ngResource'])
+    .factory('GaLogin', ['$resource', "AppConfig",
+        function($resource, AppConfig) {
+            return $resource(AppConfig.apiGAProduccion + '/login/:id', {}, {
+                check: {
+                    method: 'POST',
+                    isArray: false
+                }
+            });
+        }
+    ]);
+
+function GaLoginController($scope, $rootScope, GaLogin, NMSHelper, $location) {
+    $scope.data = {
+        username: store.get("gausername") || "",
+        password: store.get("gapassword") || ""
+    }
+
+    $scope.tryLogin = function() {
+        GaLogin.check({}, $scope.data, function(data) {
+            store.set("gausername", $scope.data.username);
+            store.set("gapassword", $scope.data.password);
+            if (data.ok) {
+                $rootScope.logged = true;
+                NMSHelper.changeState($scope, $location, "/ga/home", 500);
+            } else {
+                $('.ui.error.message').fadeIn();
+                $('.ui.form')
+                    .form("add errors", ["Usuario o contraseña invalidos"]);
+                setTimeout(function() {
+                    $('.ui.error.message').fadeOut();
+                }, 2000);
             }
-        ]);
-
-    Login.check({}, data, function() {
-        console.log("SUCCESS");
-    }, function() {
-        console.log("FAIL");
-    });
+        }, function() {
+            $('.ui.error.message').fadeIn();
+            $('.ui.form')
+                .form("add errors", ["Problema interno. Contacte administrador."]);
+            setTimeout(function() {
+                $('.ui.error.message').fadeOut();
+            }, 2000);
+        });
+    }
 
     $('.ui.form')
         .form({
@@ -50,10 +90,13 @@ function GaLoginController($scope, $rootScope) {
             }
         }, {
             onSuccess: function() {
-                $catScope.save();
+                $scope.tryLogin();
             },
             onFailure: function() {
                 //console.log("fail");
             }
         });
+
+
+    $scope.tryLogin();
 }

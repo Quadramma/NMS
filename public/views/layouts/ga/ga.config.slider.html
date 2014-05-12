@@ -1,0 +1,65 @@
+<h1>Home Slides</h1>
+
+<div class="ui form segment">
+
+    <!--SLIDE1 -->
+    <div class="two fields">
+        <div class="field">
+            <label>Slide 1</label>
+            <div id="slide1Dropdown" ng-click="slide1Click();" class="ga picture dropdown ui selection dropdown " tabindex="0">
+                <input type="hidden" name="picture">
+                <div class="default text">Seleccione</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div ng-repeat="pic in availablesSlides" class="item" data-value="{{pic}}">{{pic}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <img class="ga product slide ui medium image" src="{{fullslidesPath + slide1}}" />
+        </div>
+    </div>
+    <!--SLIDE2 -->
+    <div class="two fields">
+        <div class="field">
+            <label>Slide 2</label>
+            <div id="slide2Dropdown" ng-click="slide2Click();" class="ga picture dropdown ui selection dropdown " tabindex="0">
+                <input type="hidden" name="picture">
+                <div class="default text">Seleccione</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div ng-repeat="pic in availablesSlides" class="item" data-value="{{pic}}">{{pic}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <img class="ga product slide ui medium image" src="{{fullslidesPath + slide2}}" />
+        </div>
+    </div>
+    <!--SLIDE3 -->
+    <div class="two fields">
+        <div class="field">
+            <label>Slide 3</label>
+            <div id="slide3Dropdown" ng-click="slide3Click();" class="ga picture dropdown ui selection dropdown " tabindex="0">
+                <input type="hidden" name="picture">
+                <div class="default text">Seleccione</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div ng-repeat="pic in availablesSlides" class="item" data-value="{{pic}}">{{pic}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <img class="ga product slide ui medium image" src="{{fullslidesPath + slide3}}" />
+        </div>
+    </div>
+
+    <div class="ui error message"></div>
+</div>
+
+<div class="ui segment">
+    <a  ng-click="save()" class="ui small black button">Guardar cambios</a>
+</div>

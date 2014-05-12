@@ -23,67 +23,93 @@
 */
 
 var rcmService = angular.module('ResourceControllerMixinService', [])
-	.factory('RCM', [
+    .factory('RCM', [
 
-		function() {
-			return {
-				mixin: function(settings) {
-					//required
-					var idField = settings.idField;
-					var itemFieldName = settings.itemFieldName;
-					var itemsFieldName = settings.itemsFieldName;
-					var $ctrlScope = settings.$ctrlScope;
-					var $res = settings.$res;
-					//optional
-					var onDeleteSuccess = settings["onDeleteSuccess"] || null;
-					var onDeleteError = settings["onDeleteError"] || null;
-					var onSaveSuccess = settings["onSaveSuccess"] || null;
-					var onSaveError = settings["onSaveError"] || null;
-					var resourceApiIdFieldName = settings.resourceApiIdFieldName;
-					var callQueryAfterMixin = settings.callQueryAfterMixin || false;
-					var createDefaults = settings["createDefaults"] || {};
-					var debug = settings.debug;
+        function() {
+            var defaultFields = {};
+            return {
+                setDefaultFields: function(fields) {
+                    defaultFields = fields;
+                },
+                mixin: function(settings) {
+                    //required
+                    var idField = settings.idField;
+                    var itemFieldName = settings.itemFieldName;
+                    var itemsFieldName = settings.itemsFieldName;
+                    var $ctrlScope = settings.$ctrlScope;
+                    var $res = settings.$res;
+                    //optional
+                    var onCreateHandler = settings["onCreateHandler"] || undefined;
+                    var onSelectHandler = settings["onSelectHandler"] || undefined;
+                    var onQuerySuccess = settings["onQuerySuccess"] || undefined;
+                    var onDeleteSuccess = settings["onDeleteSuccess"] || null;
+                    var onDeleteError = settings["onDeleteError"] || null;
+                    var onSaveSuccess = settings["onSaveSuccess"] || null;
+                    var onSaveError = settings["onSaveError"] || null;
+                    var resourceApiIdFieldName = settings.resourceApiIdFieldName;
+                    var callQueryAfterMixin = settings.callQueryAfterMixin || false;
+                    defaultFields = settings["createDefaults"] || {};
+                    var debug = settings.debug;
 
-					$ctrlScope.select = function(item) {
-						$ctrlScope[itemFieldName] = item;
-						if (debug) console.log("RCM Selected:" + $ctrlScope[itemFieldName][idField]);
-					};
-					$ctrlScope.create = function() {
-						$ctrlScope[itemFieldName] = new $res();
+                    $ctrlScope.select = function(item) {
+                        //$ctrlScope[itemFieldName] = item;
 
-						for (var key in createDefaults) {
-							$ctrlScope[itemFieldName][key] = createDefaults[key];
-							if (debug) console.log("RCM Create ->injecting default " + key + " " + createDefaults[key]);
-						}
+                        $res.get({
+                            id: item[idField]
+                        }, {}, function(itemFromDB) {
+                            $ctrlScope[itemFieldName] = itemFromDB[0];
+                            if (!_.isUndefined(onSelectHandler)) {
+                                onSelectHandler(itemFromDB[0]);
+                            }
+                            if (debug) console.log("RCM Selected:" + $ctrlScope[itemFieldName][idField]);
+                        })
 
-						if (debug) console.log("RCM Create");
-					}
-					$ctrlScope.query = function() {
-						$res.query(function(data) {
-							$ctrlScope[itemsFieldName] = data
-							if (debug) console.log("RCM Query OK [" + data.length + "]");
-						});
-						if (debug) console.log("RCM Query");
-					}
 
-					$ctrlScope.delete = function() {
-						var params = {};
-						params[resourceApiIdFieldName] = $ctrlScope[itemFieldName][idField];
-						if (debug) console.log("RCM Delete:" + $ctrlScope[itemFieldName][idField]);
-						$res.delete(params, $ctrlScope[itemFieldName], function(data) {
-							if (debug) console.log("RCM Delete Success");
-							if (!_.isUndefined(onDeleteSuccess)) {
-								onDeleteSuccess(data);
-							}
-						}, function() {
-							if (debug) console.log("RCM Delete Error");
-							if (_.isFunction(onDeleteError)) {
-								onDeleteError();
-							}
-						});
-					}
 
-/*
+                    };
+                    $ctrlScope.create = function() {
+                        $ctrlScope[itemFieldName] = new $res();
+
+                        for (var key in defaultFields) {
+                            $ctrlScope[itemFieldName][key] = defaultFields[key];
+                            if (debug) console.log("RCM Create ->injecting default " + key + " " + defaultFields[key]);
+                        }
+                        if (!_.isUndefined(onCreateHandler)) {
+                            onCreateHandler();
+                        }
+
+                        if (debug) console.log("RCM Create");
+                    }
+                    $ctrlScope.query = function() {
+                        $res.query(function(data) {
+                            $ctrlScope[itemsFieldName] = data
+                            if (debug) console.log("RCM Query OK [" + data.length + "]");
+                            if (!_.isUndefined(onQuerySuccess)) {
+                                onQuerySuccess(data);
+                            }
+                        });
+
+                        if (debug) console.log("RCM Query");
+                    }
+
+                    $ctrlScope.delete = function() {
+                        var params = {};
+                        params[resourceApiIdFieldName] = $ctrlScope[itemFieldName][idField];
+                        if (debug) console.log("RCM Delete:" + $ctrlScope[itemFieldName][idField]);
+                        $res.delete(params, $ctrlScope[itemFieldName], function(data) {
+                            if (debug) console.log("RCM Delete Success");
+                            if (!_.isUndefined(onDeleteSuccess)) {
+                                onDeleteSuccess(data);
+                            }
+                        }, function() {
+                            if (debug) console.log("RCM Delete Error");
+                            if (_.isFunction(onDeleteError)) {
+                                onDeleteError();
+                            }
+                        });
+                    }
+
+                    /*
 					$ctrlScope.save = function() {
 						if (_.isUndefined($ctrlScope[itemFieldName]) || _.isNull($ctrlScope[itemFieldName])) {
 							if (debug) console.log("RCM Save item null or undefined");
@@ -119,13 +145,13 @@ var rcmService = angular.module('ResourceControllerMixinService', [])
 						}
 					}
 */
-					//
-					if (callQueryAfterMixin) {
-						$ctrlScope.query();
-					}
+                    //
+                    if (callQueryAfterMixin) {
+                        $ctrlScope.query();
+                    }
 
 
-				}
-			}
-		}
-	]);
+                }
+            }
+        }
+    ]);

@@ -26,6 +26,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script src="lib/angular-resource.min.js"></script>
     <script src="lib/angular-ui-router.js"></script>
+    <!--
+    <script src="lib/angular-file-upload.min.js"></script>  
+    -->
+
+    <script src="lib/store.js"></script>
+    <script src="lib/jquery.tablesort.min.js"></script>
+    
     <!-- -->
 
     <!--ANGULAR.APP-->
@@ -40,6 +47,7 @@
     <script src="js/controllers/NMSAppController.js"></script>
     <!--NMS.MODEL-->
     <script src="js/model/nms/ResourceControllerMixinService.js"></script>
+    <script src="js/model/nms/NMSHelperService.js"></script>
     
 
     <!-- --CLARITY--                                                            --CLARITY-- -->
@@ -67,18 +75,26 @@
 
 
 
-     <!-- --GA--                                                            --BERP-- -->
+     <!-- --GA--                                                            --GA-- -->
      <!--GA.ANGULAR.SERVICES-->
      <script src="js/services/ga/CategoryService.js"></script>
      <script src="js/services/ga/ProductService.js"></script>
+     <script src="js/services/ga/ProjectService.js"></script>
+     
+     <script src="js/services/ga/GAFileService.js"></script>
      
      <!--GA.ANGULAR.CONTROLLERS-->
     <script src="js/controllers/ga/CategoryController.js"></script>
     <script src="js/controllers/ga/ProductController.js"></script>
+    <script src="js/controllers/ga/ProjectController.js"></script>
+    <script src="js/controllers/ga/ConfigController.js"></script>
+    
     <!--GA.ANGULAR.ROUTES-->
     <script src="js/routes/ga/appRoutes.ga.js"></script>
     <script src="js/routes/ga/appRoutes.category.js"></script>
     <script src="js/routes/ga/appRoutes.product.js"></script>
+    <script src="js/routes/ga/appRoutes.project.js"></script>
+    
     
     <!--GA.CSS-->
     <link rel="stylesheet" href="css/ga.style.css" />

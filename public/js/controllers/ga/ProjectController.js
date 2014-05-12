@@ -2,18 +2,19 @@ var $currentCatScope = null;
 
 
 
-angular.module('ProductCtrl', [])
+angular.module('ProjectCtrl', [])
 
-.controller('ProductController', function(
+.controller('ProjectController', function(
     $scope, $rootScope, $location, $state,
-    Product, Category, RCM, AppConfig, GAFile) {
+    Project, Category, RCM, AppConfig, GAFile) {
+
     $currentCatScope = $scope;
     var picturePlaceHolder = "default/imageplaceholder.jpg";
-    $scope.fullpicturePath = AppConfig.apiGAProduccion + "/uploads/products/";
-    $scope.fullslidesPath = AppConfig.apiGAProduccion + "/uploads/products_slides/";
+    $scope.fullpicturePath = AppConfig.apiGAProduccion + "/uploads/projects/";
+    $scope.fullslidesPath = AppConfig.apiGAProduccion + "/uploads/projects_slides/";
     Category.query(function(data) {
         $scope.categoriesFiltered = _.filter(data, function(item) {
-            return item._category_type_id == "1"; //Products
+            return item._category_type_id == "2"; //Projects
         });
     });
 
@@ -21,7 +22,7 @@ angular.module('ProductCtrl', [])
 
     RCM.mixin({ //INJECT METHODS: CREATE, SELECT, QUERY, DELETE
         $ctrlScope: $scope, //$scope
-        $res: Product, //$resource
+        $res: Project, //$resource
         idField: "_id", //campo id del item
         itemFieldName: "item", // propeidad del $scope que contiene el item seleccionado
         itemsFieldName: "items", //propiedad de $scope que contiene la lista de items
@@ -29,13 +30,12 @@ angular.module('ProductCtrl', [])
         createDefaults: { //campos defaults para cuando se crea un item nuevo
         },
         onDeleteSuccess: function(data) {
-            $state.go("ga.product.items");
+            $state.go("ga.project.items");
         },
         onDeleteError: function() {
-            console.log("ProductCtrl onDeleteError");
+            console.log("ProjectCtrl onDeleteError");
         },
         onSelectHandler: function(item) {
-
             var slideCuts = $scope.item.slider_urls.toString().split("$$");
             $scope.item.slide1 = slideCuts.length > 0 ? slideCuts[0] : picturePlaceHolder;
             $scope.item.slide2 = slideCuts.length > 1 ? slideCuts[1] : picturePlaceHolder;
@@ -54,18 +54,20 @@ angular.module('ProductCtrl', [])
     //SAVE OR UPDATE
     $scope.save = function() {
         if ($scope.item._id == null) {
-            console.log("ProductCtrl Save");
+            console.log("ProjectCtrl Save");
             $scope.buildUrl();
-            Product.save({}, $scope.item, function(data) {
-                $state.go("ga.product.items");
+            Project.save({}, $scope.item, function(data) {
+                $state.go("ga.project.items");
+                $scope.query();
             });
         } else {
-            console.log("ProductCtrl Update");
+            console.log("ProjectCtrl Update");
             $scope.buildUrl();
-            Product.update({
+            Project.update({
                 id: $scope.item._id
             }, $scope.item, function(data) {
-                $state.go("ga.product.items");
+                $state.go("ga.project.items");
+                $scope.query();
             });
         }
     }
@@ -82,7 +84,7 @@ angular.module('ProductCtrl', [])
     }
     $scope.trydelete = function() {
         console.log("trydelete");
-        $('.ga.product.delete.ui.modal')
+        $('.ga.project.delete.ui.modal')
             .modal('setting', {
                 closable: false,
                 onDeny: function() {
@@ -108,7 +110,6 @@ angular.module('ProductCtrl', [])
         }
         $scope.item.slider_urls = urls;
     }
-
     /*
     ///
     $scope.fileImagen = function($file) {
@@ -132,18 +133,17 @@ angular.module('ProductCtrl', [])
 
 
     $scope.queryFiles = function() {
-        GAFile.getAvailableProductPictures(function(data) {
+        GAFile.getAvailableProjectPictures(function(data) {
             $scope.availablesPictures = data.files;
             $('.ui.dropdown')
                 .dropdown()
         });
-        GAFile.getAvailableProductSlides(function(data) {
+        GAFile.getAvailableProjectSlides(function(data) {
             $scope.availablesSlides = data.files;
             $('.ui.dropdown')
                 .dropdown()
         });
     }
-
 
     $scope.categoryClick = function() {
         $scope.item._category_id = $('#categoryDropdown').find("input").val();
@@ -165,17 +165,10 @@ angular.module('ProductCtrl', [])
 
 });
 
-function ProductBindFormValidations() {
+function ProjectBindFormValidations() {
     var $catScope = $currentCatScope;
     $('.ui.form')
         .form({
-            code: {
-                identifier: 'code',
-                rules: [{
-                    type: 'empty',
-                    prompt: 'Codigo requerido'
-                }]
-            },
             name: {
                 identifier: 'name',
                 rules: [{
@@ -188,27 +181,6 @@ function ProductBindFormValidations() {
                 rules: [{
                     type: 'empty',
                     prompt: 'Description requerido'
-                }]
-            },
-            details1: {
-                identifier: 'details1',
-                rules: [{
-                    type: 'empty',
-                    prompt: 'Detalle 1 requerido'
-                }]
-            },
-            details2: {
-                identifier: 'details2',
-                rules: [{
-                    type: 'empty',
-                    prompt: 'Detalle 2 requerido'
-                }]
-            },
-            details3: {
-                identifier: 'details3',
-                rules: [{
-                    type: 'empty',
-                    prompt: 'Detalle 3 requerido'
                 }]
             },
             category: {
@@ -228,12 +200,9 @@ function ProductBindFormValidations() {
         }, {
             onSuccess: function() {
                 $catScope.save();
-                //alert("success");
             },
             onFailure: function() {
                 $(".ui.error.message").focus();
-                //console.log("fail");
-                //alert("failed");
             }
         });
 
@@ -243,22 +212,22 @@ function ProductBindFormValidations() {
 
 
 
-function ProductItemsController() {
+function ProjectItemsController() {
     $currentCatScope.query();
     $('table').tablesort();
 }
 
-function ProductCreateController() {
+function ProjectCreateController() {
     $('.ui.dropdown')
         .dropdown();
-    ProductBindFormValidations();
+    ProjectBindFormValidations();
     $currentCatScope.create();
     $currentCatScope.queryFiles();
 }
 
-function ProductEditController($scope) {
+function ProjectEditController($scope) {
 
-    ProductBindFormValidations();
+    ProjectBindFormValidations();
     $currentCatScope.queryFiles();
 
     var dropdownInterval = setInterval(function() {
@@ -273,9 +242,4 @@ function ProductEditController($scope) {
             clearInterval(dropdownInterval);
         }
     }, 200);
-
-
-
-
-    console.log($currentCatScope.item);
 }

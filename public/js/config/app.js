@@ -3,7 +3,9 @@ var NMSApp = angular.module("NMSApp", [
     "appRoutes",
 
     //NMS
+    "NMSHelperService",
     "ResourceControllerMixinService",
+
 
     //CLARITY ================================================
     "HomeCtrl",
@@ -16,10 +18,17 @@ var NMSApp = angular.module("NMSApp", [
     "TemaService",
 
     //GA ============================================
+    "GaLoginService",
+    "GAFileService",
+
     "CategoryServ",
     "CategoryCtrl",
+
     "ProductServ",
-    "ProductCtrl"
+    "ProductCtrl",
+
+    "ProjectServ",
+    "ProjectCtrl"
 ]);
 
 NMSApp.config(['$httpProvider', '$sceDelegateProvider',
@@ -62,6 +71,7 @@ var AppConfigService = angular.module('AppConfigService', [])
             }
 
             settings.apiGAProduccion = settings.apiPathQuadramma; //GA
+            settings.apiGADesarrollo = settings.apiPathQuadramma; //GA
 
             return settings;
         }

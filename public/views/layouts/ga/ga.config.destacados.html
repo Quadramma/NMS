@@ -1,0 +1,65 @@
+<h1>Destacados</h1>
+
+<div class="ui form segment">
+
+    <!--SLIDE1 -->
+    <div class="two fields">
+        <div class="field">
+            <label>Destacado 1</label>
+            <div id="destacado1Dropdown" ng-click="destacado1Click();" class="ga picture dropdown ui selection dropdown " tabindex="0">
+                <input type="hidden" name="picture">
+                <div class="default text">Seleccione</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                   <div ng-repeat="item in items" class="item" data-value="{{item._id}}">{{item.code}} {{item.name}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <img class="ga product destacado ui medium image" src="{{fulldestacadosPath + destacado1}}" />
+        </div>
+    </div>
+    <!--SLIDE2 -->
+    <div class="two fields">
+        <div class="field">
+            <label>Destacado 2</label>
+            <div id="destacado2Dropdown" ng-click="destacado2Click();" class="ga picture dropdown ui selection dropdown " tabindex="0">
+                <input type="hidden" name="picture">
+                <div class="default text">Seleccione</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div ng-repeat="item in items" class="item" data-value="{{item._id}}">{{item.code}} {{item.name}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <img class="ga product destacado ui medium image" src="{{fulldestacadosPath + destacado2}}" />
+        </div>
+    </div>
+    <!--SLIDE3 -->
+    <div class="two fields">
+        <div class="field">
+            <label>Destacado 3</label>
+            <div id="destacado3Dropdown" ng-click="destacado3Click();" class="ga picture dropdown ui selection dropdown " tabindex="0">
+                <input type="hidden" name="picture">
+                <div class="default text">Seleccione</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                     <div ng-repeat="item in items" class="item" data-value="{{item._id}}">{{item.code}} {{item.name}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <img class="ga product destacado ui medium image" src="{{fulldestacadosPath + destacado3}}" />
+        </div>
+    </div>
+
+    <div class="ui error message"></div>
+</div>
+
+<div class="ui segment">
+    <a  ng-click="save()" class="ui small black button">Guardar cambios</a>
+</div>
