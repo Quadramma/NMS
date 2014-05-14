@@ -12,7 +12,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     })
 
     .state('ga.category.items', {
-        url: '/items',
+        url: '/items/:type',
         views: {
             '': {
                 templateUrl: 'views/nodes/category/category.items.html',
@@ -40,47 +40,5 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             }
         })
 
-
-    .state('ga.prjcategory', {
-        url: '/prjcategory',
-        views: {
-            '': {
-                templateUrl: 'views/nodes/category/category.layout.html',
-                controller: 'CategoryController'
-            }
-        }
-    })
-
-
-
-    .state('ga.prjcategory.create', {
-        url: '/create',
-        views: {
-            '': {
-                templateUrl: 'views/nodes/prjcategory/prjcategory.create.html',
-                controller: "PrjCategoryCreateController"
-            }
-        }
-    })
-
-    .state('ga.prjcategory.edit', {
-        url: '/edit',
-        views: {
-            '': {
-                templateUrl: 'views/nodes/prjcategory/prjcategory.edit.html',
-                controller: "PrjCategoryEditController"
-            }
-        }
-    })
-
-    .state('ga.prjcategory.items', {
-        url: '/items',
-        views: {
-            '': {
-                templateUrl: 'views/nodes/prjcategory/prjcategory.items.html',
-                controller: 'CategoryItemsController'
-            }
-        }
-    })
 
 });

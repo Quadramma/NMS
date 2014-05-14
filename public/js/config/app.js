@@ -20,6 +20,7 @@ var NMSApp = angular.module("NMSApp", [
     //GA ============================================
     "GaLoginService",
     "GAFileService",
+    
 
     "CategoryServ",
     "CategoryCtrl",

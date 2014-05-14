@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in productCategories" ui-sref="ga.category.edit(item._id)" ng-click="select(item);">
+        <tr ng-repeat="item in items" ui-sref="ga.category.edit(item._id)" ng-click="select(item);">
             
             <td>{{item.description}}</td>
         </tr>

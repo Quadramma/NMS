@@ -1,0 +1,40 @@
+<div class="ui form segment">
+    <div class="field">
+        <h1>Subir imagenes</h1>
+    </div>
+    <div class="fields">
+        <div class="field">
+            <p id="status">File API & FileReader API no soportado. Actualizar el navegador.</p>
+            <p>Arrastra una imagen desde la computadora.</p>
+        </div>
+    </div>
+    <div class="two columns fields">
+
+        <div class="field">
+            <div class="field">
+                <label>Destino</label>
+                <div id="destinoDropdown" ng-click="categoryClick();" class="ga destino dropdown ui selection dropdown " tabindex="0">
+                    <input type="hidden" name="destino">
+                    <div class="default text">Seleccione un destino</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" data-value="products">Productos</div>
+                        <div class="item" data-value="products_slides">Slides de Productos</div>
+                        <div class="item" data-value="projects">Proyectos</div>
+                        <div class="item" data-value="projects_slides">Slides de Productos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <article>
+                <div id="holder"></div>
+            </article>
+        </div>
+        <div class="field">
+            <div class="ui error message"></div>
+            <a ng-click="tryupload()" class="ui small black button">Subir</a>
+        </div>
+    </div>
+</div>

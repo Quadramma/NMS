@@ -18,6 +18,9 @@ angular.module(_moduleName, []).controller(_controllerName, function(
     $scope, $rootScope, $location, Category, RCM, $state) {
     $currentCatScope = $scope;
 
+    var stateParams = $state.params;
+    console.log(stateParams);
+
     //defaults
     $scope.stateRedirectAfterSaveRoute = "ga.category.items";
     $scope.stateRedirectAfterDeleteRoute = "ga.category.items";
@@ -34,11 +37,8 @@ angular.module(_moduleName, []).controller(_controllerName, function(
         resourceApiIdFieldName: _resourceApiIdFieldName, //nombre del campo id del routeo del api(web api, wcf, nodejs, etc)
         createDefaults: $scope.defaultFields,
         onQuerySuccess: function(data) {
-            $scope.productCategories = _.filter(data, function(item) {
-                return item._category_type_id == "1"; //Products
-            });
-            $scope.projectCategories = _.filter(data, function(item) {
-                return item._category_type_id == "2"; //Projects
+            $scope.items = _.filter(data, function(item) {
+                return item._category_type_id == stateParams.type; //Projects
             });
         },
         onDeleteSuccess: function(data) {

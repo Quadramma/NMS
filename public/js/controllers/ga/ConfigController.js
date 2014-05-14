@@ -1,3 +1,121 @@
+function GaUploadsController($scope, AppConfig) {
+    console.log("GaUploadsController");
+    $scope.file = null;
+
+
+    //Ajax para enviar formdata
+    function send(type, formData, callback) {
+        $.ajax(AppConfig.apiGAProduccion + '/upload/' + type, {
+            type: "POST",
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            data: formData
+        }).always(function(arg1, arg2, arg3) {
+            callback(arg1)
+        }).error(function(jqXHR, status, error) {
+            log("Ajax Status -> " + (status));
+            log("Ajax Error -> " + (error));
+        });
+    }
+
+
+
+    $scope.tryupload = function() {
+        $('.ui.form').form('validate form');
+    }
+    $scope.upload = function() {
+        console.log("GaUploadsController.upload");
+        if ($scope.file == null) {
+            //console.log("GaUploadsController.upload file empty nothing happens");
+            $scope.message("Warning: No se detecto ninguna imagen para subir",3000);
+        } else {
+            var fd = new FormData();
+            fd.append("file", $scope.file);
+            var resFunction = $("#destinoDropdown").find("input").val();
+
+            send(resFunction, fd, function(res) {
+                console.log("GaUploadsController upload response");
+                console.log(res);
+                if(res.ok){
+                    $scope.message("Imagen "+res.fileName+" cargada.",2000);
+                }else{
+                    $scope.message("Error: "+res.saveResponse.error,10000);
+                }
+            })
+
+        }
+    }
+
+    //HTML FILE DROP 
+    var holder = document.getElementById('holder'),
+        state = document.getElementById('status');
+
+    if (typeof window.FileReader === 'undefined') {
+        state.className = 'fail';
+    } else {
+        state.className = 'success';
+        state.innerHTML = '';
+    }
+
+    holder.ondragover = function() {
+        this.className = 'hover';
+        return false;
+    };
+    holder.ondragend = function() {
+        this.className = '';
+        return false;
+    };
+    holder.ondrop = function(e) {
+        this.className = '';
+        e.preventDefault();
+
+        var file = e.dataTransfer.files[0],
+            reader = new FileReader();
+        reader.onload = function(event) {
+            console.log(event.target);
+            holder.style.background = 'url(' + event.target.result + ') no-repeat center';
+        };
+        console.log(file);
+        reader.readAsDataURL(file);
+        $scope.file = file;
+        return false;
+    };
+
+    //SEMANTIC INIT
+    $('.ui.form')
+        .form({
+            destino: {
+                identifier: 'destino',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'Destino requerido'
+                }]
+            }
+        }, {
+            onSuccess: function() {
+                $scope.upload();
+            },
+            onFailure: function() {
+                $(".ui.error.message").focus();
+            }
+        });
+    $('.ui.dropdown')
+        .dropdown();
+
+    //message
+    $scope.message = function(msg, time) {
+        $('.ui.error.message').fadeIn();
+        $('.ui.form')
+            .form("add errors", [msg]);
+        setTimeout(function() {
+            $('.ui.error.message').fadeOut();
+        }, time);
+    }
+
+}
+
+
 function ConfigController() {
 
 }
@@ -73,7 +191,6 @@ function ConfigSliderController($scope, $state, GAFile, AppConfig) {
 
 
 }
-
 
 
 

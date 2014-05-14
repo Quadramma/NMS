@@ -43,6 +43,17 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     })
 
 
+    .state('ga.uploads', {
+        url: '/uploads',
+        views: {
+            '': {
+                templateUrl: 'views/layouts/ga/ga.uploads.html',
+                controller: 'GaUploadsController'
+            }
+        }
+    })
+
+
     .state('ga.config', {
         url: '/config',
         views: {
