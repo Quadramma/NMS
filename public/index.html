@@ -26,9 +26,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script src="lib/angular-resource.min.js"></script>
     <script src="lib/angular-ui-router.js"></script>
-    <!--
-    <script src="lib/angular-file-upload.min.js"></script>  
-    -->
 
     <script src="lib/store.js"></script>
     <script src="lib/jquery.tablesort.min.js"></script>
@@ -43,6 +40,9 @@
     <!--NMS.CSS-->
     <link rel="stylesheet" href="css/nms.css" />
     <link rel="stylesheet" href="css/nms-navigation.css" />
+    <!--NMS.ANGULAR.DIRECTIVES-->
+    <script src="js/directives/SemanticUIDirectives.js"></script>
+    
     <!--NMS.ANGULAR.CONTROLLERS-->
     <script src="js/controllers/NMSAppController.js"></script>
     <!--NMS.MODEL-->
@@ -51,17 +51,20 @@
     
 
     <!-- --CLARITY--                                                            --CLARITY-- -->
-    <!--ANGULAR.ROUTES.CLARITY-->
+    <!--CLARITY.ANGULAR.ROUTES-->
     <script src="js/routes/clarity/appRoutes.clarity.js"></script>
     <script src="js/routes/clarity/appRoutes.crm.js"></script>
     <script src="js/routes/clarity/appRoutes.tema.js"></script>
-    <!--ANGULAR.SERVICES.CLARITY-->
+    <!--CLARITY.ANGULAR.SERVICES-->
     <script src="js/services/clarity/TemaService.js"></script>
-    <!--ANGULAR.CONTROLLERS.CLARITY-->
+    <script src="js/services/clarity/CRMServices.js"></script>
+    <script src="js/services/clarity/CoreTablesServices.js"></script>
+    
+    <!--CLARITY.ANGULAR.CONTROLLERS-->
     <script src="js/controllers/clarity/TemaController.js"></script>
     <script src="js/controllers/clarity/HomeController.js"></script>
     <script src="js/controllers/clarity/CrmController.js"></script>
-    <!--ANGULAR.MODEL.CLARITY-->
+    <!--CLARITY.ANGULAR.MODEL-->
     <!--CLARITY.CSS-->
     
 

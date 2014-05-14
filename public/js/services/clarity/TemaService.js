@@ -1,14 +1,14 @@
 var module1 = angular.module('TemaService', ['ngResource', 'AppConfigService'])
 	.factory('Tema', ['$resource', 'AppConfig',
 		function($resource, AppConfig) {
-			return $resource(AppConfig.apiLocalhostIIS + 'tema/:id', {}, {
+			return $resource(AppConfig.apiClarity + 'tema/:id', {}, {
 				query: {
 					method: "GET",
 					isArray: true
 				},
 				get: {
 					method: "GET",
-					isArray: false
+					isArray: true
 				},
 				update: {
 					method: 'PUT',

@@ -57,6 +57,8 @@ var rcmService = angular.module('ResourceControllerMixinService', [])
                         $res.get({
                             id: item[idField]
                         }, {}, function(itemFromDB) {
+                            if (debug) console.log("RCM Get from db:");
+                            if (debug) console.log(itemFromDB);
                             $ctrlScope[itemFieldName] = itemFromDB[0];
                             if (!_.isUndefined(onSelectHandler)) {
                                 onSelectHandler(itemFromDB[0]);

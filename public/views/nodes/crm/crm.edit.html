@@ -1,1 +1,19 @@
-CRM EDIT
+<h1>CRM</h1>
+
+<div class="ui form segment">
+
+    <div class="two fields">
+        <div class="field">
+            <label>Asunto</label>
+            <input id="asunto" placeholder="Asunto" name="asunto" type="text" ng-model="item.Asunto" />
+        </div>
+    </div>
+
+
+    <div class="ui error message"></div>
+</div>
+
+<div class="ui segment">
+    <a ng-click="trysave()" class="ui small blue  button">Guardar</a>
+    <a ui-sref="clarity.crm.list" class="ui small blue  button">Cancelar</a>
+</div>

@@ -1,8 +1,13 @@
+
+
+//------------------------------
+
 var NMSApp = angular.module("NMSApp", [
     //COMMON
     "appRoutes",
 
     //NMS
+    "SemanticUIDirectives",
     "NMSHelperService",
     "ResourceControllerMixinService",
 
@@ -12,7 +17,8 @@ var NMSApp = angular.module("NMSApp", [
 
     //CRM
     "CrmCtrl",
-    "ContactoService",
+    "CRMServices",
+    "CoreTablesServices",
     //-TEMA
     "TemaCtrl",
     "TemaService",
@@ -39,14 +45,16 @@ NMSApp.config(['$httpProvider', '$sceDelegateProvider',
     }
 ]);
 
+
 //GLOBAL CONFIG.
-var settings = {
-    transformRequest: false //TRUE FOR CLARITY !!!
+var GlobalSettings = {
+    transformRequest: true //TRUE FOR CLARITY !!!
+    ,productionMode: false
 };
 
 NMSApp.config(function($httpProvider) {
     console.log("NMSApp Config OK");
-    if (settings.transformRequest) {
+    if (GlobalSettings.transformRequest) {
         $httpProvider.defaults.transformRequest = function(data) {
             if (data === undefined)
                 return data;
@@ -65,13 +73,22 @@ var AppConfigService = angular.module('AppConfigService', [])
             var settings = {
                 apiClarityPathVS: "http://localhost:9000/api/",
                 apiLocalhost1336: "http://localhost:1336/api/",
-                apiLocalhostIIS: "http://192.168.11.128/WebApi/api/",
+                apiLocalhostIISIP: "http://192.168.11.128/WebApi/api/",
+                apiLocalhostIIS: "http://localhost/WebApi/api/",
                 apiPathQuadramma: "http://www.quadramma.com/pruebas/ga_remake/backend/api",
                 apiLocal: "backend/api"
             }
 
-            settings.apiGAProduccion = settings.apiPathQuadramma; //GA
-            settings.apiGADesarrollo = settings.apiPathQuadramma; //GA
+            settings.apiClarityProduction = settings.apiLocalhostIIS; //CLARITY
+            settings.apiClarityDev = settings.apiClarityPathVS; //CLARITY
+            settings.apiGAProduction = settings.apiPathQuadramma; //GA
+            settings.apiGADev = settings.apiPathQuadramma; //GA
+
+            settings.apiClarity = GlobalSettings.productionMode?
+                settings.apiClarityProduction:settings.apiClarityDev;
+
+            settings.apiGa = GlobalSettings.productionMode?
+                settings.apiGAProduction:settings.apiGADev;    
 
             return settings;
         }

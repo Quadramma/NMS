@@ -5,7 +5,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/layouts/clarity/clarity.layout.html',
-                    controller: 'HomeController'
+                    controller: 'ClarityAppController'
                 },
                 'header@clarity': {
                     templateUrl: 'views/layouts/clarity/clarity.header.html',

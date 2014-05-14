@@ -4,10 +4,14 @@ function NMSAppController($scope, $rootScope) {
 
 }
 
+function ClarityAppController($scope,$rootScope){
+    $("title").html("Home | Clarity");
+}
+
 
 function GAppController($scope, $rootScope) {
 
-    $("title").html("GA | Backend");
+    $("title").html("Backend | GA");
 
     $scope.logged = function() {
         return $rootScope.logged;

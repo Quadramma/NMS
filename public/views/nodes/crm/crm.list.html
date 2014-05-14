@@ -1,19 +1,51 @@
-
 <h1>ABM CRM</h1>
 
-<a class="ui small blue button" ui-sref="clarity.tema.create" ng-click="create()">Nuevo</a>
+<div class="ui form segment">
 
-
-<div class="ui celled list">
- 
-  <div ng-repeat="item in items" class="item" >
-    <div class="content">
-      <div class="header">{{item.Asunto}}</div>
-      {{item.ContactoID}}
-      <a ng-click="select(item)" ui-sref="clarity.tema.edit"><i class="edit icon link icon"></i></a>
+    <div class="field">
+        <a class="ui small blue button" ui-sref="clarity.crm.create" ng-click="create()">Nuevo</a>
     </div>
-  </div>
- 
-</div>
 
-<p>{{list.length}} Temas leidos</p>
+    <div class="field">
+        <label>Empresa</label>
+        <div  id="empresaDropdown" ng-click="empresaDropdownClick();" class="clarity empresa dropdown ui selection dropdown " tabindex="0">
+            <input type="hidden" name="category" >
+            <div class="default text">Filtro de empresa . . .</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div ng-repeat="item in empresas" class="item" data-value="{{item.EmpresaID}}">{{item.RazonSocial}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <table class="ui sortable compact table segment">
+            <thead>
+                <tr>
+                    <th>RazonSocial</th>
+                    <th>Asunto</th>
+                    <th>Tema</th>
+                    <th>Estado</th>
+                    <th>SubEstado</th>
+                    <th>Fecha Agenda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items" ui-sref="clarity.crm.edit" ng-click="select(item);">
+                    <td>{{item.RazonSocial}}</td>
+                    <td>{{item.Asunto}}</td>
+                    <td>{{item.TemaDescripcion}}</td>
+                    <td>{{item.EstadoContactoDescripcion}}</td>
+                    <td>{{item.SubEstadoContactoDescripcion}}</td>
+                    <td>{{item.FechaAgenda}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">
+                        {{items.length}} leidos
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
