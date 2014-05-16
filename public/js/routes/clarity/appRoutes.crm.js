@@ -6,7 +6,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/nodes/crm/crm.layout.html',
-                    controller: 'CrmController'
+                   // controller: ''
                 }
             }
         })
@@ -15,7 +15,8 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         url: '/list',
         views: {
             '': {
-                templateUrl: 'views/nodes/crm/crm.list.html'
+                templateUrl: 'views/nodes/crm/crm.list.html',
+                controller:"ContactoItemsController"
             }
         }
     })
@@ -23,15 +24,17 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             url: '/create',
             views: {
                 '': {
-                    templateUrl: 'views/nodes/crm/crm.create.html'
+                    templateUrl: 'views/nodes/crm/crm.create.html',
+                    controller:"ContactoCreateController"
                 }
             }
         })
         .state('clarity.crm.edit', {
-            url: '/edit',
+            url: '/edit/:id',
             views: {
                 '': {
-                    templateUrl: 'views/nodes/crm/crm.edit.html'
+                    templateUrl: 'views/nodes/crm/crm.edit.html',
+                    controller:"ContactoEditController"
                 }
             }
         });

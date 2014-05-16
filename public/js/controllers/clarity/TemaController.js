@@ -1,8 +1,8 @@
 angular.module('TemaCtrl', []).controller('TemaController', function(
-    $scope, $rootScope, Tema, RCM) {
+    $scope, $rootScope, CRM, RCM) {
     RCM.mixin({ //INJECT METHODS: CREATE, SELECT, QUERY, DELETE
         $ctrlScope: $scope, //$scope
-        $res: Tema, //$resource
+        $res: CRM.Tema, //$resource
         idField: "TemaID", //campo id del item
         itemFieldName: "item", // propeidad del $scope que contiene el item seleccionado
         itemsFieldName: "items", //propiedad de $scope que contiene la lista de items
@@ -47,33 +47,98 @@ angular.module('TemaCtrl', []).controller('TemaController', function(
 });
 
 
+//REWORK---------------------------------------------------------********************************
+var Tema = new(function() {
+    var node = "Tema";
+    var info = function(msg) {
+        console.info("[" + node + "][" + msg + "]");
+    };
 
-/*
-
-
-        //ALL
-        $('.ui.sidebar')
-            .sidebar("setting", {
-                overlay: true,
-                exclusive: true,
-                //debug: true,
-                //verbose: true
-            });
-
-
-//LEFT BIND BTN
-        $('.nms.left.ui.sidebar')
-            .sidebar('attach events', '.nms.btn-node-sidebar.toggle.button')
-            .sidebar("onChange", function() {
-                console.log("onChange");
-            });
-        $(".nms.page").on("click", function(evt) {
-            var btnIgnoreId = $('.nms.btn-node-sidebar.toggle.button').first().attr("id");
-            if (evt.target.id == btnIgnoreId) {} else {
-                $('.nms.left.ui.sidebar')
-                    .sidebar("hide");
-
-            }
+    this.ItemsController = function($scope, $rootScope, RCM, CRM, CTS, $timeout) {
+        info("TemaItemsController");
+        CRM.Tema.query({
+            pageNumber: 1,
+            itemsPerPage: 100
+        }, function(page) {
+            $scope.items = page.Items;
         });
+    }
 
-*/
+    this.CreateController = function($scope, $state, $rootScope, RCM, CRM, CTS, $timeout) {
+        info("CreateController");
+        $scope.trysave = function() {
+            $('.ui.form').form('validate form');
+            info("trysave");
+        }
+        $scope.save = function() {
+            info("validaciones ok");
+            CRM.Tema.save({}, $scope.item, function() {
+                $state.go("clarity.tema.list"); //SUCCESS
+                info("save success");
+            }, function() {
+                $state.go("clarity.tema.list"); //ERROR
+                info("save failure");
+            });
+        }
+        FormValidationDefinition($scope.save, null);
+    }
+
+    this.EditController = function($scope, $state, $rootScope, RCM, CRM, CTS, $timeout) {
+        info("EditController");
+        $scope.trysave = function() {
+            info("trysave");
+            $('.ui.form').form('validate form');
+        }
+        $scope.save = function() {
+            info("validaciones ok");
+            CRM.Tema.update({
+                id: $scope.item.TemaID
+            }, $scope.item, function() {
+                //$state.go("clarity.tema.list"); //SUCCESS
+                info("save success");
+            }, function() {
+                //$state.go("clarity.tema.list"); //ERROR
+                info("save failure");
+            });
+        }
+        /*
+        $scope.delete = function() {
+            CRM.Tema.delete({
+                id: $scope.item.TemaID
+            }, $scope.item, function() {
+                $state.go("clarity.tema.list"); //SUCCESS
+                info("delete success");
+            }, function() {
+                $state.go("clarity.tema.list"); //ERROR
+                info("delete failure");
+            });
+        }
+        */
+        FormValidationDefinition($scope.save, null);
+        //ITEM
+        CRM.Tema.get({
+            id: $state.params.id
+        }, function(data) {
+            $scope.item = data[0];
+        });
+    }
+
+    //VALIDACIONES
+    function FormValidationDefinition(onSuccess, onFailure) {
+        $('.ui.form')
+            .form({
+                asunto: {
+                    description: 'description',
+                    rules: [{
+                        type: 'empty',
+                        prompt: 'Desripcion requerida'
+                    }]
+                }
+            }, {
+                onSuccess: onSuccess,
+                onFailure: onFailure
+            });
+    }
+
+
+})();

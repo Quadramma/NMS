@@ -1,10 +1,41 @@
+//GLOBAL
 function NMSAppController($scope, $rootScope) {
-
-    // $("title").html("Clarity | Flow/Health");
+    console.info("[NMSAppController]");
+    
+    //$(".ng-scope").css("max-height",$("window").height());
+    //$(".ng-scope").css("overflow","auto");
 
 }
 
-function ClarityAppController($scope,$rootScope){
+
+function NMSPageController($scope) {
+    console.info("[NMSPageController]");
+
+    _nms.page = {};
+    smokesignals.convert(_nms.page);
+
+    //EVENTS
+    $(".nms.page").on("keypress", function(e) {
+        if (e.which == 13) {
+            var $focused = $(":focus");
+            $focused.blur();
+            _nms.page.emit("enterPress", {
+                element: $focused
+            });
+        }
+    })
+}
+
+
+function SelectKeyController($scope) {
+    console.log("SelectKeyController");
+
+
+    sharedScopes.SelectKeyScope = $scope;
+}
+
+
+function ClarityAppController($scope, $rootScope) {
     $("title").html("Home | Clarity");
 }
 

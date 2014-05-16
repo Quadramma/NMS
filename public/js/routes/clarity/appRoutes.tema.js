@@ -6,7 +6,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/nodes/tema/tema.layout.html',
-                    controller: 'TemaController'
+                    //controller: 'TemaController'
                 }
             }
         })
@@ -15,7 +15,8 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         url: '/list',
         views: {
             '': {
-                templateUrl: 'views/nodes/tema/tema.list.html'
+                templateUrl: 'views/nodes/tema/tema.list.html',
+                controller: 'Tema.ItemsController'
             }
         }
     })
@@ -23,15 +24,17 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             url: '/create',
             views: {
                 '': {
-                    templateUrl: 'views/nodes/tema/tema.create.html'
+                    templateUrl: 'views/nodes/tema/tema.create.html',
+                    controller: 'Tema.CreateController'
                 }
             }
         })
         .state('clarity.tema.edit', {
-            url: '/edit',
+            url: '/edit/:id',
             views: {
                 '': {
-                    templateUrl: 'views/nodes/tema/tema.edit.html'
+                    templateUrl: 'views/nodes/tema/tema.edit.html',
+                    controller: 'Tema.EditController'
                 }
             }
         });
