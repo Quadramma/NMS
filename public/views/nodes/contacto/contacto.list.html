@@ -1,0 +1,58 @@
+<h1>ABM Contacto</h1>
+
+<div class="ui segment menu">
+
+    <div class="item">
+        <a class="ui small blue button" ui-sref="clarity.crm.create" ng-click="create()">Nuevo</a>
+    </div>
+
+</div>
+
+<div class="ui form segment">
+
+    <div class="slk">
+        <div class="inline field">
+            <label>Empresa</label>
+            <input type="text" class="slk_code" placeholder="Codigo" ng-model="filtro.empresaID">
+            <input type="text" class="slk_text" placeholder="Razon Social">
+            <div id="search" ng-click="refresh();" class="ui icon button">
+                <i class="search icon"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="field">
+        <table class="ui sortable compact table segment">
+            <thead>
+                <tr>
+                 <th>Codigo</th>
+                    <th>RazonSocial</th>
+                    <th>Asunto</th>
+                    <th>Tema</th>
+                    <th>Estado</th>
+                    <th>SubEstado</th>
+                    <th>Fecha Agenda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items" ui-sref="clarity.crm.edit({id:item.ContactoID})">
+                <td>{{item.EmpresaID}}</td>
+                    <td>{{item.RazonSocial}}</td>
+                    <td>{{item.Asunto}}</td>
+                    <td>{{item.TemaDescripcion}}</td>
+                    <td>{{item.EstadoContactoDescripcion}}</td>
+                    <td>{{item.SubEstadoContactoDescripcion}}</td>
+                    <td>{{item.FechaAgenda}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">
+                        {{items.length}} leidos
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
