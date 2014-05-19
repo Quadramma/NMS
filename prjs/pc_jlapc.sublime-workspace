@@ -164,42 +164,10 @@
 	"buffers":
 	[
 		{
-			"file": "/C/GIT/NMS/public/js/controllers/clarity/CrmController.js",
-			"settings":
-			{
-				"buffer_size": 5525,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
 			"settings":
 			{
-				"buffer_size": 4730,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/GIT/NMS/public/js/services/clarity/CRMServices.js",
-			"settings":
-			{
-				"buffer_size": 1266,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/GIT/NMS/public/js/routes/clarity/appRoutes.tema.js",
-			"settings":
-			{
-				"buffer_size": 1165,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/GIT/NMS/public/views/nodes/tema/tema.edit.html",
-			"settings":
-			{
-				"buffer_size": 801,
+				"buffer_size": 9172,
 				"line_ending": "Windows"
 			}
 		}
@@ -272,17 +240,26 @@
 	},
 	"file_history":
 	[
+		"/C/GIT/NMS/public/index.disabled.info",
+		"/C/GIT/NMS/public/index.html",
+		"/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
+		"/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
+		"/C/GIT/NMS/public/views/nodes/tema/tema.create.html",
 		"/C/GIT/NMS/public/js/routes/clarity/appRoutes.tema.js",
+		"/C/GIT/NMS/public/js/config/app.js",
+		"/C/GIT/NMS/public/js/routes/clarity/appRoutes.contacto.js",
+		"/C/GIT/NMS/public/views/nodes/tema/tema.edit.html",
+		"/C/GIT/NMS/public/js/controllers/clarity/CrmController.js",
+		"/C/GIT/WebApi-Clarity/.gitignore",
+		"/C/GIT/NMS/.gitignore",
+		"/C/Program Files (x86)/Git/doc/git/html/git-reset.html",
 		"/C/GIT/NMS/public/views/nodes/crm/crm.layout.html",
 		"/C/GIT/NMS/public/views/nodes/tema/tema.layout.html",
 		"/C/GIT/NMS/public/views/nodes/tema/tema.list.html",
 		"/C/GIT/NMS/public/views/nodes/crm/crm.list.html",
 		"/C/GIT/NMS/public/views/nodes/crm/crm.edit.html",
-		"/C/GIT/NMS/public/js/config/app.js",
 		"/C/GIT/NMS/public/js/controllers/NMSAppController.js",
 		"/C/GIT/NMS/deprecated/crm.js",
-		"/C/GIT/NMS/public/index.html",
-		"/C/GIT/NMS/public/js/controllers/clarity/CrmController.js",
 		"/C/GIT/NMS/public/views/layouts/clarity/clarity.layout.html",
 		"/C/GIT/NMS/public/views/layouts/clarity/clarity.header.html",
 		"/C/GIT/NMS/public/css/clarity.style.css",
@@ -302,7 +279,6 @@
 		"/C/GIT/NMS/public/js/services/clarity/TemaService.js",
 		"/C/GIT/NMS/public/js/routes/appRoutes.js",
 		"/C/GIT/NMS/public/js/routes/clarity/appRoutes.clarity.js",
-		"/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
 		"/C/GIT/NMS/public/js/model/clarity/ResourceControllerMixinService.js",
 		"/C/GIT/NMS/public/views/layouts/berp/berp.tree.html",
 		"/C/GIT/NMS/public/js/routes/berp/appRoutes.berp.js",
@@ -391,19 +367,11 @@
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/superfish.min.js",
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.prettyPhoto.js",
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.ga.pluggins.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/ga.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/myscript.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/GACollection.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/project.php",
-		"/C/Users/QUADRA~1/AppData/Local/Temp/Rar$DRa0.507/dinnextltpro-ultralight.css",
-		"/C/Users/QUADRA~1/AppData/Local/Temp/Rar$DRa0.308/dinnextltpro-regular.css",
-		"/C/Users/quadramma/Google Drive/quadramma/ga/jquery-scrollbox-master/demos/demo.css",
-		"/C/Users/quadramma/Google Drive/quadramma/ga/jquery-scrollbox-master/demos/index.html",
-		"/C/Users/quadramma/Google Drive/quadramma/ga/jquery-scrollbox-master/demos/GACollection.js"
+		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/ga.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 54.0
 	},
 	"find_in_files":
 	{
@@ -417,6 +385,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"{\n",
+			"FormValidationDefinition",
+			"crm",
+			"AppConfig",
+			"ContactoService",
 			"ui.form",
 			"BindFormValidations",
 			"SelectKeyController",
@@ -539,12 +512,7 @@
 			"background-im",
 			"CabourgLightRegular",
 			"projects_link",
-			"projects",
-			"cabo",
-			"navme",
-			"SLIDER",
-			"fam",
-			"_startUpload"
+			"projects"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -552,6 +520,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"contacto",
 			"apiGADev",
 			"apiGAProduction",
 			"apiClarityDev",
@@ -581,54 +550,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/GIT/NMS/public/js/controllers/clarity/CrmController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5525,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4155,
-								4097
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1500.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4730,
+						"buffer_size": 9172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3287,
-								3293
+								1876,
+								1876
 							]
 						],
 						"settings":
@@ -638,99 +577,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1601.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/GIT/NMS/public/js/services/clarity/CRMServices.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								120,
-								126
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 228.0,
+						"translation.y": 729.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/GIT/NMS/public/js/routes/clarity/appRoutes.tema.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1100,
-								1100
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/GIT/NMS/public/views/nodes/tema/tema.edit.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								654,
-								654
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -774,7 +624,7 @@
 	"project": "pc_jlapc.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 102.0
 	},
 	"save_all_on_build": true,
 	"select_file":

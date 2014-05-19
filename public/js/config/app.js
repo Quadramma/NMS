@@ -13,6 +13,7 @@ var NMSApp = angular.module("NMSApp", [
 
     //COMMON
     "appRoutes",
+    "AppConfigService",
 
     //NMS
     "SemanticUIDirectives",
@@ -20,28 +21,30 @@ var NMSApp = angular.module("NMSApp", [
     "ResourceControllerMixinService",
 
 
+
     //CLARITY ================================================
     "HomeCtrl",
-
+    "TemaNode",
+    "ContactoNode",
     //CRM
-    "CRMServices",
-    "CoreTablesServices",
+    //"CRMServices",
+    //"CoreTablesServices",
     //-TEMA
-    "TemaCtrl",
-    "TemaService",
+    //"TemaCtrl",
+    //"TemaService",
+
 
     //GA ============================================
+    /*
     "GaLoginService",
     "GAFileService",
-
     "CategoryServ",
     "CategoryCtrl",
-
     "ProductServ",
     "ProductCtrl",
-
     "ProjectServ",
     "ProjectCtrl"
+    */
 ]);
 
 NMSApp.config(['$httpProvider', '$sceDelegateProvider',

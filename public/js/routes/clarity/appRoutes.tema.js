@@ -16,7 +16,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         views: {
             '': {
                 templateUrl: 'views/nodes/tema/tema.list.html',
-                controller: 'Tema.ItemsController'
+                controller: 'TemaItemsController'
             }
         }
     })
@@ -25,7 +25,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/nodes/tema/tema.create.html',
-                    controller: 'Tema.CreateController'
+                    controller: 'TemaCreateController'
                 }
             }
         })
@@ -34,7 +34,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/nodes/tema/tema.edit.html',
-                    controller: 'Tema.EditController'
+                    controller: 'TemaEditController'
                 }
             }
         });
