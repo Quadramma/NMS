@@ -10,6 +10,7 @@
 
 <div class="ui form segment">
 
+    <!--
     <div class="slk">
         <div class="inline field">
             <label>Empresa</label>
@@ -20,13 +21,61 @@
             </div>
         </div>
     </div>
+    -->
+
+    <div class="field">
+        <label>Empresa</label>
+        <div id="empresaDropdown" class="clarity ui dropdown selection" tabindex="0">
+            <input type="hidden" value="">
+            <div class="default text">Filtro empresa...</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item" data-value="-1">Todas las empresas</div>
+                <div ng-repeat="empresa in empresas" class="item" data-value="{{empresa.EmpresaID}}">{{empresa.EmpresaID}} - {{empresa.RazonSocial}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Estado</label>
+        <div id="estadoContactoDropdown" class="clarity estadocontacto  ui  dropdown selection" tabindex="0">
+            <input type="hidden" value="">
+            <div class="default text">Filtro estado...</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item" data-value="-1">Todos los estados</div>
+                <div ng-repeat="estado in estados" class="item" data-value="{{estado.EstadoContactoID}}">{{estado.Descripcion}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label>F. Agenda Desde</label>
+        <div class='input-group date' id='fechaAgendaDesde' data-date-format="DD/MM/YYYY">
+            <input type='text' class="form-control" name="fechaAgendaDesde" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+    <div class="field">
+        <label>F. Agenda Hasta</label>
+        <div class='input-group date' id='fechaAgendaHasta' data-date-format="DD/MM/YYYY">
+            <input type='text' class="form-control" name="fechaAgendaHasta" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
 
 
     <div class="field">
         <table class="ui sortable compact table segment">
             <thead>
                 <tr>
-                 <th>Codigo</th>
+                    <th>ID</th>
+                    <th>Empresa ID</th>
                     <th>RazonSocial</th>
                     <th>Asunto</th>
                     <th>Tema</th>
@@ -37,13 +86,14 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in items" ui-sref="clarity.contacto.edit({id:item.ContactoID})">
-                <td>{{item.EmpresaID}}</td>
+                    <td>{{item.ContactoID}}</td>
+                    <td>{{item.EmpresaID}}</td>
                     <td>{{item.RazonSocial}}</td>
                     <td>{{item.Asunto}}</td>
                     <td>{{item.TemaDescripcion}}</td>
                     <td>{{item.EstadoContactoDescripcion}}</td>
                     <td>{{item.SubEstadoContactoDescripcion}}</td>
-                    <td>{{item.FechaAgenda}}</td>
+                    <td>{{item.Comienzo}}</td>
                 </tr>
             </tbody>
             <tfoot>
