@@ -3,7 +3,7 @@
 <div class="ui segment menu">
 
     <div class="item">
-        <a class="ui small blue button" ui-sref="clarity.crm.create" ng-click="create()">Nuevo</a>
+        <a class="ui small blue button" ui-sref="clarity.contacto.create" ng-click="create()">Nuevo</a>
     </div>
 
 </div>
@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in items" ui-sref="clarity.crm.edit({id:item.ContactoID})">
+                <tr ng-repeat="item in items" ui-sref="clarity.contacto.edit({id:item.ContactoID})">
                 <td>{{item.EmpresaID}}</td>
                     <td>{{item.RazonSocial}}</td>
                     <td>{{item.Asunto}}</td>
