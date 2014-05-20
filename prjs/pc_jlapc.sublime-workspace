@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Comie",
+				"ComienzoHasta"
+			],
+			[
+				"Estado",
+				"EstadoContactoID"
+			],
+			[
 				"Estad",
 				"EstadoContacto"
 			],
@@ -164,10 +172,34 @@
 	"buffers":
 	[
 		{
-			"file": "/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
+			"file": "/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
 			"settings":
 			{
-				"buffer_size": 9172,
+				"buffer_size": 17786,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.edit.html",
+			"settings":
+			{
+				"buffer_size": 3256,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/GIT/NMS/public/js/model/FrontEndHelper.js",
+			"settings":
+			{
+				"buffer_size": 3431,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
+			"settings":
+			{
+				"buffer_size": 3955,
 				"line_ending": "Windows"
 			}
 		}
@@ -240,9 +272,13 @@
 	},
 	"file_history":
 	[
-		"/C/GIT/NMS/public/index.disabled.info",
 		"/C/GIT/NMS/public/index.html",
 		"/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
+		"/C/GIT/NMS/public/views/nodes/contacto/contacto.edit.html",
+		"/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
+		"/C/GIT/NMS/public/views/layouts/clarity/clarity.tree.html",
+		"/C/GIT/NMS/public/views/layouts/nms/login.html",
+		"/C/GIT/NMS/public/index.disabled.info",
 		"/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
 		"/C/GIT/NMS/public/views/nodes/tema/tema.create.html",
 		"/C/GIT/NMS/public/js/routes/clarity/appRoutes.tema.js",
@@ -263,7 +299,6 @@
 		"/C/GIT/NMS/public/views/layouts/clarity/clarity.layout.html",
 		"/C/GIT/NMS/public/views/layouts/clarity/clarity.header.html",
 		"/C/GIT/NMS/public/css/clarity.style.css",
-		"/C/GIT/NMS/public/views/layouts/clarity/clarity.tree.html",
 		"/C/GIT/NMS/public/views/layouts/clarity/clarity.home.html",
 		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/jlm.js",
 		"/C/GIT/NMS/public/js/routes/clarity/appRoutes.crm.js",
@@ -364,14 +399,11 @@
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/animate.js",
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/owl.carousel.js",
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.flexslider-min.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/superfish.min.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.prettyPhoto.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.ga.pluggins.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/ga.php"
+		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/superfish.min.js"
 	],
 	"find":
 	{
-		"height": 54.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -385,6 +417,13 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"bindTemaDropdown",
+			"remoteScope",
+			"ContactoHelperModule",
+			"TemaHelperModule",
+			"FormValidationDefinition",
+			"FormValidationDefinition ",
+			"crm",
 			"{\n",
 			"FormValidationDefinition",
 			"crm",
@@ -505,14 +544,7 @@
 			"17 March, 2041",
 			"cole",
 			"colee",
-			"DINNextLTProRegular",
-			"CabourgLightRegular",
-			"DINNextLTProMedium",
-			"CabourgLightRegular",
-			"background-im",
-			"CabourgLightRegular",
-			"projects_link",
-			"projects"
+			"DINNextLTProRegular"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -520,6 +552,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"item",
 			"contacto",
 			"apiGADev",
 			"apiGAProduction",
@@ -555,19 +588,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
+					"file": "/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9172,
+						"buffer_size": 17786,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1876,
-								1876
+								3321,
+								3321
 							]
 						],
 						"settings":
@@ -577,10 +610,100 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 729.0,
+						"translation.y": 1724.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.edit.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2929,
+								2520
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/GIT/NMS/public/js/model/FrontEndHelper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								311,
+								315
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 228.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2115,
+								2115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 872.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -624,7 +747,7 @@
 	"project": "pc_jlapc.sublime-project",
 	"replace":
 	{
-		"height": 102.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
