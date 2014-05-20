@@ -6,7 +6,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/nodes/tema/tema.layout.html',
-                    //controller: 'TemaController'
+                    controller: 'TemaLayoutController'
                 }
             }
         })

@@ -23,6 +23,7 @@ var NMSApp = angular.module("NMSApp", [
 
 
     //CLARITY ================================================
+    "ClarityApp",
     "HomeCtrl",
     "TemaNode",
     "ContactoNode",

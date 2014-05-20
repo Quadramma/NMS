@@ -6,7 +6,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/nodes/contacto/contacto.layout.html',
-                   // controller: ''
+                    controller: 'ContactoLayoutController'
                 }
             }
         })
@@ -35,6 +35,9 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                 '': {
                     templateUrl: 'views/nodes/contacto/contacto.edit.html',
                     controller:"ContactoEditController"
+                },
+                "novedades@clarity.contacto.edit":{
+                    templateUrl: 'views/nodes/novedad/novedad.items.html'
                 }
             }
         });

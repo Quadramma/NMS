@@ -1,6 +1,20 @@
-<h1>Contacto: {{item.Asunto}}</h1>
-
 <div class="ui form">
+
+
+    <div class="field">
+        <div class="ui menu">
+            <div class="item">
+                <a ng-click="save()" class="ui small blue  button">Guardar</a>
+                <a ng-click="delete()" class="ui small blue  button">Eliminar</a>
+                <a ui-sref="clarity.contacto.list" class="ui small blue  button">Cancelar</a>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="ui error message"></div>
+
     <div class="ui four fields">
         <div class="field">
             <label>Codigo Interno</label>
@@ -68,10 +82,9 @@
         </div>
     </div>
 
-    <div class="ui error message"></div>
     <div class="field">
-        <a ng-click="save()" class="ui small blue  button">Guardar</a>
-        <a ng-click="delete()" class="ui small blue  button">Eliminar</a>
-        <a ui-sref="clarity.contacto.list" class="ui small blue  button">Cancelar</a>
+        <div ui-view="novedades"></div>
     </div>
+
+
 </div>

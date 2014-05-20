@@ -7,26 +7,28 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
                     templateUrl: 'views/layouts/clarity/clarity.layout.html',
                     controller: 'ClarityAppController'
                 },
-                'header@clarity': {
-                    templateUrl: 'views/layouts/clarity/clarity.header.html',
-
-                },
                 'tree@clarity': {
                     templateUrl: 'views/layouts/clarity/clarity.tree.html',
+                    controller: "ClarityMenuController"
+
+                },
+                'header@clarity': {
+                    templateUrl: 'views/layouts/clarity/clarity.header.html',
+                    controller: 'ClarityHeaderController'
 
                 }
             }
         })
-    .state('clarity.home', {
-        url: '/home',
-        views: {
-            '': {
-                templateUrl: 'views/layouts/clarity/clarity.home.html',
+        .state('clarity.home', {
+            url: '/home',
+            views: {
+                '': {
+                    templateUrl: 'views/layouts/clarity/clarity.home.html',
+                }
             }
-        }
-    })
+        })
 
-     .state('clarity.login', {
+    .state('clarity.login', {
         url: '/login',
         views: {
             '': {
