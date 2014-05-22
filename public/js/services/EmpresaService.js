@@ -1,9 +1,9 @@
 //Require:
 //- $resource pluggin (ngResource)
 //- AppConfig (Clarity configuration module)
-angular.module('NovedadService', ['ngResource']).factory('Novedad', ['$resource', 'AppConfig',
+angular.module('EmpresaService', ['ngResource']).factory('Empresa', ['$resource', 'AppConfig',
     function($resource, AppConfig) {
-        return $resource(AppConfig.apiClarity + 'novedad/:action/:id', {}, {
+        return $resource(AppConfig.apiClarity + 'empresa/:action/:id', {}, {
             query: {
                 method: "GET",
                 isArray: false,

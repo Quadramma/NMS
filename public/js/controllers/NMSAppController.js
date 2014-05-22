@@ -2,8 +2,8 @@
 function NMSAppController($scope, $rootScope) {
     console.info("[NMSAppController]");
     
-    //$(".ng-scope").css("max-height",$("window").height());
-    //$(".ng-scope").css("overflow","auto");
+    $(".ng-scope").css("max-height",$("window").height());
+    $(".ng-scope").css("overflow-y","auto");
 
 }
 

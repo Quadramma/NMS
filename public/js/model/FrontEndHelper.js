@@ -27,7 +27,6 @@ angular.module("FrontEndHelperService", []).factory("$FEHelper", [
                 dtp.on("change", function() {
                     var value = $(p.selector + " input").val();
                     console.info("[FEHelper][dtp change][" + value + "]");
-                    if (p.autoBindItem) p.$item[p.itemField] = value;
                     if (!_.isUndefined(p.onChange)) p.onChange(value);
                 })
                 if (!_.isNull(date)) {

@@ -15,7 +15,7 @@ angular.module('ContactoNode', [
 
 
 
-.controller('ContactoLayoutController', function($scope){
+.controller('ContactoLayoutController', function($scope) {
     console.info("[ContactoLayoutController]");
     //window.history.pushState({}, "Contacto","Contacto");
     $("title").html("Contacto | Clarity");
@@ -124,11 +124,13 @@ angular.module('ContactoNode', [
             ComienzoDesde: formatDate($scope.filtro.ComienzoDesde),
             ComienzoHasta: formatDate($scope.filtro.ComienzoHasta)
         }, function(res) { //res -> data (page)
+
             _.each(res.data.Items, function(item) {
-                var milli = moment(new Date(item.Comienzo).getTime());
-                var formated = milli.format("DD/MM/YYYY");
-                item.Comienzo = formated;
+                
+                item.Comienzo = moment(new Date(item.Comienzo)).format("DD/MM/YYYY");
+                //console.log(new Date(item.Comienzo));
             });
+
             $scope.items = res.data.Items;
             $scope.$emit("ItemsGet");
         });
@@ -179,6 +181,12 @@ angular.module('ContactoNode', [
         $('.ui.form').form('validate form');
     }
     $scope.save = function() {
+
+        //FORMAT DATES FOR WEBAPI/SQL SERVER
+        $scope.item.Comienzo = moment($scope.item.Comienzo, "DD/MM/YYYY").format("YYYY/MM/DD")
+
+
+
         console.info("[ContactoEditController][" + "validaciones ok" + "]");
         Contacto.save({}, $scope.item, function(data) {
             $state.go("clarity.contacto.list");
@@ -203,7 +211,7 @@ angular.module('ContactoNode', [
         }
     }
     //
-    ContactoHelper.FormValidationDefinition($scope.save, null);
+    ContactoHelper.FormValidationDefinition($scope.save, function() {});
 
 
     //TemaDropdown----------------
@@ -244,14 +252,21 @@ angular.module('ContactoNode', [
     $scope.syncNovedades = function() {
         Novedad.query({
             pageNumber: 1,
-            itemsPerPage: 100
+            itemsPerPage: 100,
+            ContactoID: $scope.item.ContactoID
         }, function(res) { //res -> data (page)
-            $scope.novedades = res.data.Items;
-            console.info($scope.novedades);
+
+
+            var items = res.data.Items;
+            _.each(items, function(item) {
+                item.Fecha = moment((new Date(item.Fecha)).getTime()).format("DD/MM/YYYY");
+            });
+            $scope.novedades = items;
+
             $scope.$emit("NovedadesGet");
         });
     }
-    $scope.syncNovedades();
+
 
 
     Contacto.get({
@@ -259,18 +274,19 @@ angular.module('ContactoNode', [
     }, function(res) {
         //console.log(res);
         $scope.item = res.data[0];
-        $scope.$emit("ItemGet");
+
+
+        $scope.syncNovedades();
 
         $FEHelper.bindDtp({
-            $item: $scope.item,
             selector: "#fechaAgenda",
-            itemField: "Comienzo",
-            autoBindItem: true,
             defaultValue: $scope.item.Comienzo,
-            onChange: function(val) {}
+            onChange: function(val) {
+                $scope.item.Comienzo = val;
+            }
         });
 
-
+        $scope.$emit("ItemGet");
     });
 });
 
@@ -373,40 +389,6 @@ angular.module('ContactoService', ['ngResource']).factory('Contacto', ['$resourc
 angular.module('EstadoContactoService', ['ngResource']).factory('EstadoContacto', ['$resource', 'AppConfig',
     function($resource, AppConfig) {
         return $resource(AppConfig.apiClarity + 'estadocontacto/:id', {}, {
-            query: {
-                method: "GET",
-                isArray: false
-            },
-            get: {
-                method: "GET",
-                isArray: false
-            },
-            update: {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            },
-            delete: {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            },
-            save: {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            }
-        });
-    }
-]);
-
-
-angular.module('EmpresaService', ['ngResource']).factory('Empresa', ['$resource', 'AppConfig',
-    function($resource, AppConfig) {
-        return $resource(AppConfig.apiClarity + 'empresa/:id', {}, {
             query: {
                 method: "GET",
                 isArray: false

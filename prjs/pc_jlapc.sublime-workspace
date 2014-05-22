@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"textarea	Tag"
+			],
+			[
 				"Comie",
 				"ComienzoHasta"
 			],
@@ -172,34 +176,50 @@
 	"buffers":
 	[
 		{
-			"file": "/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
+			"file": "/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.create.html",
 			"settings":
 			{
-				"buffer_size": 17786,
+				"buffer_size": 1523,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.edit.html",
+			"file": "/C/GIT/ClarityApp/public/css/clarity.style.css",
 			"settings":
 			{
-				"buffer_size": 3256,
+				"buffer_size": 298,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/GIT/NMS/public/js/model/FrontEndHelper.js",
+			"file": "/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.tree.html",
 			"settings":
 			{
-				"buffer_size": 3431,
+				"buffer_size": 1071,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
+			"file": "/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.items.html",
 			"settings":
 			{
-				"buffer_size": 3955,
+				"buffer_size": 629,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.novedad.js",
+			"settings":
+			{
+				"buffer_size": 1373,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/GIT/ClarityApp/public/js/controllers/clarity/NovedadController.js",
+			"settings":
+			{
+				"buffer_size": 5956,
 				"line_ending": "Windows"
 			}
 		}
@@ -207,9 +227,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 265.0,
+		"height": 127.0,
 		"selected_items":
 		[
+			[
+				"set syntax javas",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"for",
 				"Format: Javascript"
@@ -251,7 +275,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 416.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -272,14 +296,34 @@
 	},
 	"file_history":
 	[
+		"/C/GIT/ClarityApp/public/css/clarity.style.css",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.tree.html",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.header.html",
+		"/C/GIT/ClarityApp/public/index.html",
+		"/C/GIT/ClarityApp/public/js/controllers/clarity/NovedadController.js",
+		"/C/GIT/ClarityApp/public/js/controllers/clarity/ContactoController.js",
+		"/C/GIT/ClarityApp/public/js/services/NovedadService.js",
+		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.edit.html",
+		"/C/GIT/ClarityApp/public/js/controllers/clarity/ClarityAppControllers.js",
+		"/C/GIT/ClarityApp/public/js/controllers/NMSAppController.js",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.home.html",
+		"/C/GIT/ClarityApp/public/views/nodes/contacto/contacto.edit.html",
+		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.items.html",
+		"/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.novedad.js",
+		"/C/GIT/ClarityApp/public/js/config/app.js",
+		"/C/GIT/ClarityApp/public/js/services/EmpresaService.js",
+		"/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.clarity.js",
+		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.layout.html",
+		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.create.html",
+		"/C/GIT/NMS/public/js/model/FrontEndHelper.js",
+		"/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
+		"/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
 		"/C/GIT/NMS/public/index.html",
 		"/C/GIT/NMS/public/js/controllers/clarity/TemaController.js",
 		"/C/GIT/NMS/public/views/nodes/contacto/contacto.edit.html",
-		"/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
 		"/C/GIT/NMS/public/views/layouts/clarity/clarity.tree.html",
 		"/C/GIT/NMS/public/views/layouts/nms/login.html",
 		"/C/GIT/NMS/public/index.disabled.info",
-		"/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
 		"/C/GIT/NMS/public/views/nodes/tema/tema.create.html",
 		"/C/GIT/NMS/public/js/routes/clarity/appRoutes.tema.js",
 		"/C/GIT/NMS/public/js/config/app.js",
@@ -379,31 +423,11 @@
 		"/C/Users/quadramma/SinglePageAppNodeAngular/server.js",
 		"/C/Users/quadramma/SinglePageAppNodeAngular/public/index.html",
 		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/index 5.php",
-		"/C/Users/quadramma/qmGIT/scrollToggle/index.html",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/style.css",
-		"/C/Users/quadramma/SinglePageAppNodeAngular/package.json",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/ga 2.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/gapi 2.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/index 4.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/ga.pluggins.css",
-		"/C/Users/quadramma/Google Drive/quadramma/ga/pagina/_api/config.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/gafront.min.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.ga.pluggins.min.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/flexslider.css",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/prettyPhoto.css",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/animate.css",
-		"/C/Users/quadramma/temp/ga.pluggins.css",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/owl.carousel.css",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.scrollbox.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.BlackAndWhite.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/animate.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/owl.carousel.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/jquery.flexslider-min.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/superfish.min.js"
+		"/C/Users/quadramma/qmGIT/scrollToggle/index.html"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -417,6 +441,19 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"subAbmCancel()",
+			"FormValidationDefinition",
+			"Empresa",
+			"EmpresaSer",
+			"Empresa",
+			"Novedad",
+			"NovedadService",
+			"novedad",
+			"ID",
+			"tema",
+			"Tema",
+			"Contacto",
+			"contacto",
 			"bindTemaDropdown",
 			"remoteScope",
 			"ContactoHelperModule",
@@ -531,20 +568,7 @@
 			"ajax",
 			"collection",
 			"loadProducts",
-			"jsonProductsCollection",
-			"cursor",
-			"cloneWrapper",
-			"select",
-			"DINNextLTProLight",
-			"work_info",
-			"DINNextLTProRegular",
-			"PRO",
-			"portfolio-post.html",
-			"Ginger Beast",
-			"17 March, 2041",
-			"cole",
-			"colee",
-			"DINNextLTProRegular"
+			"jsonProductsCollection"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -552,6 +576,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Empresa",
+			"EmpresaService",
+			"empresa",
+			"novedad",
+			"Novedad",
+			"novedad",
 			"item",
 			"contacto",
 			"apiGADev",
@@ -588,29 +618,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/GIT/NMS/public/js/controllers/clarity/ContactoController.js",
+					"file": "/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.create.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17786,
+						"buffer_size": 1523,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3321,
-								3321
+								879,
+								879
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1724.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -618,19 +648,47 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.edit.html",
-					"semi_transient": true,
+					"file": "/C/GIT/ClarityApp/public/css/clarity.style.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3256,
+						"buffer_size": 298,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2929,
-								2520
+								238,
+								238
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.tree.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								666,
+								666
 							]
 						],
 						"settings":
@@ -640,27 +698,87 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1026.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/C/GIT/NMS/public/js/model/FrontEndHelper.js",
+					"buffer": 3,
+					"file": "/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.items.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3431,
+						"buffer_size": 629,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								311,
-								315
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.novedad.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								705,
+								715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/GIT/ClarityApp/public/js/controllers/clarity/NovedadController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5564,
+								5570
 							]
 						],
 						"settings":
@@ -670,40 +788,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 228.0,
+						"translation.y": 3115.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/GIT/NMS/public/views/nodes/contacto/contacto.list.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3955,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2115,
-								2115
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 872.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -747,7 +835,7 @@
 	"project": "pc_jlapc.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -24,6 +24,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             views: {
                 '': {
                     templateUrl: 'views/layouts/clarity/clarity.home.html',
+                    controller: "ClarityHomeController"
                 }
             }
         })
