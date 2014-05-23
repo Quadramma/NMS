@@ -8,14 +8,14 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 appRoutes.run(function($rootScope, $location, $urlRouter, $state, $timeout) {
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-        $rootScope.logged = $rootScope.logged || true;
+        $rootScope.logged = $rootScope.logged || false;
         if (toState.url != "/login" && !$rootScope.logged) {
-            //console.log("redirect to login ");
+            console.log("redirect to login ");
 
             event.preventDefault();
             $timeout(function() {
                 event.currentScope.$apply(function() {
-                    $state.go("ga.login")
+                    $state.go("clarity-login")
                 });
             }, 300)
 

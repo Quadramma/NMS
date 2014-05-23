@@ -1,10 +1,25 @@
-<!-- home.html -->
-	<div class="jumbotron text-center">
-		<h1>Login</h1>
-		<p>{{error}}</p>
+<div class="ui fluid vertical menu">
+    <div class="item clarity login box">
+        <div class="ui fluid form">
+            <div class="field">
+                <label>Usuario</label>
+                <input type="text" name="loginname" placeholder="Usuario" ng-model="data.loginname">
+            </div>
+            <div class="field">
+                <label>Contraseña</label>
+                <input type="text" name="password" placeholder="Contraseña" ng-model="data.password">
+            </div>
 
-		<input type="text" class="form-control input-lg text-center" placeholder="Usuario" ng-model="formData.username">
-		<input type="text" class="form-control input-lg text-center" placeholder="Password" ng-model="formData.password">
+            <div class="field">
+                <a ng-click="trylogin();" class="ui small blue button">
+                	Ingresar
+                </a>
+            </div>
 
-		<input class="login-btn" type="button" value="Ingresar" />
-	</div>
+            <div class="ui error message"></div>
+        </div>
+    </div>
+    <div class="item clarity login box">
+    	<div ui-view="logo"></div>
+    </div>
+</div>

@@ -29,12 +29,15 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             }
         })
 
-    .state('clarity.login', {
+    .state('clarity-login', {
         url: '/login',
         views: {
             '': {
-                templateUrl: 'views/layouts/nms/login.html',
-                // controller: 'LoginController'
+                templateUrl: 'views/layouts/clarity/clarity.login.html',
+                controller: 'ClarityLoginController'
+            },
+            "logo@clarity-login": {
+                templateUrl: 'views/layouts/clarity/clarity.logo.html'
             }
         }
     })

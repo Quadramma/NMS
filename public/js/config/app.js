@@ -13,19 +13,21 @@ var NMSApp = angular.module("NMSApp", [
 
     //COMMON
     "appRoutes",
-    "AppConfigService",
+    /*"AppConfigService",*/
 
-    //NMS
-    "SemanticUIDirectives",
+    //NMS ================================================
+    "NMSAppModule",
+
+    /*"SemanticUIDirectives",*/
     "NMSHelperService",
-    "ResourceControllerMixinService",
-
+    /*"ResourceControllerMixinService",*/
 
 
     //CLARITY ================================================
-    "ClarityApp",
-
+    "ClarityAppModule",
     
+    "ClarityLoginModule",
+
     "TemaNode",
     "ContactoNode",
     "NovedadNode",
@@ -50,6 +52,8 @@ var NMSApp = angular.module("NMSApp", [
     */
 ]);
 
+
+//CORS----------------------
 NMSApp.config(['$httpProvider', '$sceDelegateProvider',
     function($httpProvider, $sceDelegateProvider) {
         $httpProvider.defaults.useXDomain = true;
@@ -66,6 +70,8 @@ var GlobalSettings = {
     productionMode: false
 };
 
+
+//TRANSFORM REQUEST (FOR WEBAPI2)
 NMSApp.config(function($httpProvider) {
     //console.log("NMSApp Config OK");
     if (GlobalSettings.transformRequest) {
@@ -81,35 +87,36 @@ NMSApp.config(function($httpProvider) {
 
 
 
-NMSApp.run(['$rootScope', function($rootScope) {
-    $http.defaults.headers.common['auth-token'] = 'C3PO R2D2';
-});
+NMSApp.run(['$rootScope', "$http",
+    function($rootScope, $http) {
+        //$http.defaults.headers.common['Authorization'] = 'C3PO R2D2';
+    }
+]);
 
 
-var AppConfigService = angular.module('AppConfigService', [])
-    .factory('AppConfig', [
+NMSApp.factory('AppConfig', [
 
-        function() {
-            var settings = {
-                apiClarityPathVS: "http://localhost:9000/api/",
-                apiLocalhost1336: "http://localhost:1336/api/",
-                apiLocalhostIISIP: "http://192.168.11.128/WebApi/api/",
-                apiLocalhostIIS: "http://localhost/WebApi/api/",
-                apiPathQuadramma: "http://www.quadramma.com/pruebas/ga_remake/backend/api",
-                apiLocal: "backend/api"
-            }
-
-            settings.apiClarityProduction = settings.apiLocalhostIIS; //CLARITY
-            settings.apiClarityDev = settings.apiClarityPathVS; //CLARITY
-            settings.apiGAProduction = settings.apiPathQuadramma; //GA
-            settings.apiGADev = settings.apiPathQuadramma; //GA
-
-            settings.apiClarity = GlobalSettings.productionMode ?
-                settings.apiClarityProduction : settings.apiClarityDev;
-
-            settings.apiGa = GlobalSettings.productionMode ?
-                settings.apiGAProduction : settings.apiGADev;
-
-            return settings;
+    function() {
+        var settings = {
+            apiClarityPathVS: "http://localhost:9000/api/",
+            apiLocalhost1336: "http://localhost:1336/api/",
+            apiLocalhostIISIP: "http://192.168.11.128/WebApi/api/",
+            apiLocalhostIIS: "http://localhost/WebApi/api/",
+            apiPathQuadramma: "http://www.quadramma.com/pruebas/ga_remake/backend/api",
+            apiLocal: "backend/api"
         }
-    ]);
+
+        settings.apiClarityProduction = settings.apiLocalhostIIS; //CLARITY
+        settings.apiClarityDev = settings.apiClarityPathVS; //CLARITY
+        settings.apiGAProduction = settings.apiPathQuadramma; //GA
+        settings.apiGADev = settings.apiPathQuadramma; //GA
+
+        settings.apiClarity = GlobalSettings.productionMode ?
+            settings.apiClarityProduction : settings.apiClarityDev;
+
+        settings.apiGa = GlobalSettings.productionMode ?
+            settings.apiGAProduction : settings.apiGADev;
+
+        return settings;
+    }
+]);

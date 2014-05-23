@@ -1,6 +1,20 @@
-angular.module('ClarityApp', [
-
+angular.module('ClarityAppModule', [
+	"NMSAppModule"
 ])
+
+
+.controller('ClarityMenuController', function($scope, $NMSConfig) {
+	console.info("[ClarityMenuController]");
+
+
+	$scope.closeMenu = function() {
+		$('.menu.sidebar')
+			.sidebar('toggle');
+	}
+
+	$NMSConfig.AppIdentifier = "ClarityApp";	
+
+})
 
 .controller('ClarityMenuController', function($scope) {
 	console.info("[ClarityMenuController]");
