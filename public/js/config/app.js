@@ -80,6 +80,12 @@ NMSApp.config(function($httpProvider) {
 });
 
 
+
+NMSApp.run(['$rootScope', function($rootScope) {
+    $http.defaults.headers.common['auth-token'] = 'C3PO R2D2';
+});
+
+
 var AppConfigService = angular.module('AppConfigService', [])
     .factory('AppConfig', [
 
