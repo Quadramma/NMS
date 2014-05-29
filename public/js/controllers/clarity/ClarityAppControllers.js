@@ -3,7 +3,14 @@ angular.module('ClarityAppModule', [
 ])
 
 
-.controller('ClarityMenuController', function($scope, $NMSConfig) {
+.controller('ClarityPageController', function($scope, $NMSConfig) {
+	console.info("[ClarityPageController]");
+
+	$NMSConfig.AppIdentifier = "ClarityApp";
+
+})
+
+.controller('ClarityMenuController', function($scope, $NMSConfig, $rootScope) {
 	console.info("[ClarityMenuController]");
 
 
@@ -12,23 +19,12 @@ angular.module('ClarityAppModule', [
 			.sidebar('toggle');
 	}
 
-	$NMSConfig.AppIdentifier = "ClarityApp";	
-
-})
-
-.controller('ClarityMenuController', function($scope) {
-	console.info("[ClarityMenuController]");
-
-
-	$scope.closeMenu = function() {
-		$('.menu.sidebar')
-			.sidebar('toggle');
-	}
 
 
 })
 
-.controller('ClarityHeaderController', function($scope) {
+
+.controller('ClarityHeaderController', function($scope, $rootScope) {
 	console.info("[ClarityHeaderController]");
 
 	function initSidebar() {
@@ -41,7 +37,7 @@ angular.module('ClarityAppModule', [
 
 	$(window).on("resize", function() {
 
-		if($('.menu.sidebar').sidebar("is open")){
+		if ($('.menu.sidebar').sidebar("is open")) {
 			$('.menu.sidebar').sidebar("hide");
 		}
 
@@ -61,13 +57,22 @@ angular.module('ClarityAppModule', [
 		//}, 3000);
 	}
 
+	if (!$rootScope.logged) {
+		$(".clarity.menu.button").toggle(false);
+	}
+
+
 })
 
 
 
-.controller('ClarityHomeController', function($scope) {
+.controller('ClarityHomeController', function($scope, $rootScope, $NMSLocalSession) {
 	console.info("[ClarityHomeController]");
 
+	$scope.session = $NMSLocalSession.getData();
 
+	if ($rootScope.logged) {
+		$(".clarity.menu.button").fadeIn();
+	}
 
 });

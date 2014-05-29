@@ -30,7 +30,7 @@ appRoutes.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         })
 
     .state('clarity-login', {
-        url: '/login',
+        url: '^/login',
         views: {
             '': {
                 templateUrl: 'views/layouts/clarity/clarity.login.html',

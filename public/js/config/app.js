@@ -67,7 +67,7 @@ NMSApp.config(['$httpProvider', '$sceDelegateProvider',
 var GlobalSettings = {
     transformRequest: true //TRUE FOR CLARITY !!!
     ,
-    productionMode: false
+    productionMode: true
 };
 
 
@@ -108,6 +108,7 @@ NMSApp.factory('AppConfig', [
 
         settings.apiClarityProduction = settings.apiLocalhostIIS; //CLARITY
         settings.apiClarityDev = settings.apiClarityPathVS; //CLARITY
+        
         settings.apiGAProduction = settings.apiPathQuadramma; //GA
         settings.apiGADev = settings.apiPathQuadramma; //GA
 

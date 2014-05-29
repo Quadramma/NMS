@@ -4,13 +4,16 @@ angular.module('NMSAppModule', [
 ])
 
 
-.controller('NMSAppController', function($scope, $NMSConfig) {
+.controller('NMSAppController', function($scope, $NMSConfig, $rootScope) {
 	console.info("[NMSAppController]");
 
 	$(".ng-scope").css("max-height", $("window").height());
 	$(".ng-scope").css("overflow-y", "auto");
 
 	$NMSConfig.AppIdentifier = "NMS_DEFAULT_APP_IDENTIFIER";
+
+	//ALWAYS START LOGGED FALSE
+	$rootScope.logged = false;
 
 })
 

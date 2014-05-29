@@ -1,9 +1,12 @@
-<div ui-view="tree"></div>
-<div ui-view="header"></div>
 
-<div class="clarity main ui fluid vertical menu">
-    <div class="item">
-        <div ui-view></div>     <!-- main view -->
+<div class="clarity page" ng-controller="ClarityPageController">
+    <div ui-view="tree"></div>
+    <div ui-view="header"></div>
+
+    <div class="clarity main ui fluid vertical menu">
+        <div class="item">
+            <div ui-view></div>     <!-- main view -->
+        </div>
     </div>
 </div>
 
