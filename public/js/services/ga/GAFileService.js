@@ -46,6 +46,13 @@ var GAFile = angular.module('GAFileService', ['ngResource', 'AppConfigService'])
                         },
                         isArray: false
                     },
+                    saveHomeText: {
+                        method: 'POST',
+                        params: {
+                            action: 'saveHomeText'
+                        },
+                        isArray: false
+                    },
                     saveDestacados: {
                         method: 'POST',
                         params: {
@@ -64,6 +71,13 @@ var GAFile = angular.module('GAFileService', ['ngResource', 'AppConfigService'])
                         method: 'GET',
                         params: {
                             action: 'getHomeSlides'
+                        },
+                        isArray: false
+                    },
+                    getHomeText: {
+                        method: 'GET',
+                        params: {
+                            action: 'getHomeText'
                         },
                         isArray: false
                     }
