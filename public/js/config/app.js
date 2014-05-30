@@ -101,7 +101,7 @@ NMSApp.factory('AppConfig', [
             apiClarityPathVS: "http://localhost:9000/api/",
             apiLocalhost1336: "http://localhost:1336/api/",
             apiLocalhostIISIP: "http://192.168.11.128/WebApi/api/",
-            apiLocalhostIIS: "http://localhost/WebApi/api/",
+            apiLocalhostIIS: "http://192.168.11.129/WebApi/api/",
             apiPathQuadramma: "http://www.quadramma.com/pruebas/ga_remake/backend/api",
             apiLocal: "backend/api"
         }

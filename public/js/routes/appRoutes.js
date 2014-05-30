@@ -10,7 +10,7 @@ appRoutes.run(function($rootScope, $location, $urlRouter, $state, $timeout) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         
 
-        $rootScope.logged = $rootScope.logged || false;
+        $rootScope.logged = $rootScope.logged || true;
 
 
         //console.debug(toState);

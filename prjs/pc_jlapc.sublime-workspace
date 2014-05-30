@@ -191,6 +191,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/GIT/App.Clarity/bower.json",
+			"settings":
+			{
+				"buffer_size": 263,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/GIT/App.Clarity/package.json",
+			"settings":
+			{
+				"buffer_size": 192,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -268,18 +284,25 @@
 	},
 	"file_history":
 	[
+		"/C/GIT/ClarityApp/public/views/nodes/company/company.create.html",
+		"/C/GIT/ClarityApp/public/js/routes/appRoutes.js",
+		"/C/GIT/ClarityApp/public/js/config/app.js",
+		"/E/ClarityApp/git_video_features.txt",
+		"/C/GIT/ClarityApp/public/views/nodes/company/company.items.html",
+		"/C/GIT/ClarityApp/public/views/nodes/company/company.edit.html",
+		"/C/GIT/ClarityApp/public/js/controllers/clarity/ClarityAppControllers.js",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.home.html",
+		"/C/GIT/ClarityApp/public/js/modules/main/NMSAppModule.js",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.header.html",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.login.html",
+		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.layout.html",
+		"/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.clarity.js",
+		"/C/GIT/ClarityApp/public/js/modules/auth/NMSAuthModule.js",
 		"/C/GIT/ClarityApp/public/js/controllers/NMSAppController.js",
 		"/C/GIT/ClarityApp/public/js/controllers/clarity/ClarityLoginController.js",
-		"/C/GIT/ClarityApp/public/js/modules/auth/NMSAuthModule.js",
-		"/C/GIT/ClarityApp/public/js/config/app.js",
-		"/C/GIT/ClarityApp/public/js/controllers/clarity/ClarityAppControllers.js",
 		"/C/GIT/ClarityApp/public/js/modules/config/NMSConfigModule.js",
-		"/C/GIT/ClarityApp/public/js/modules/main/NMSAppModule.js",
 		"/C/GIT/ClarityApp/public/css/clarity.style.css",
-		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.login.html",
-		"/C/GIT/ClarityApp/public/js/routes/appRoutes.js",
 		"/C/GIT/ClarityApp/public/index.html",
-		"/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.clarity.js",
 		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.logo.html",
 		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.edit.html",
 		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.create.html",
@@ -294,9 +317,7 @@
 		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/forms.php",
 		"/C/GIT/ClarityApp/public/js/routes/clarity/appRoutes.novedad.js",
 		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.tree.html",
-		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.header.html",
 		"/C/GIT/ClarityApp/public/js/services/NovedadService.js",
-		"/C/GIT/ClarityApp/public/views/layouts/clarity/clarity.home.html",
 		"/C/GIT/ClarityApp/public/views/nodes/contacto/contacto.edit.html",
 		"/C/GIT/ClarityApp/public/js/services/EmpresaService.js",
 		"/C/GIT/ClarityApp/public/views/nodes/novedad/novedad.layout.html",
@@ -390,12 +411,7 @@
 		"/C/Users/quadramma/qmGIT/NMS/.bowerrc",
 		"/C/Users/quadramma/Google Drive/quadramma/neutrogena/index.html",
 		"/C/Users/quadramma/Google Drive/quadramma/neutrogena/css/style.css",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/tmpl_body_ga_main.html",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/gaModule.js",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/category.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/destacado.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/gapi.php",
-		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/index 2.php"
+		"/C/Users/quadramma/AppData/Local/Temp/fz3temp-1/tmpl_body_ga_main.html"
 	],
 	"find":
 	{
@@ -585,8 +601,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/GIT/App.Clarity/bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/GIT/App.Clarity/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
